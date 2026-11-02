@@ -321,6 +321,21 @@ footer{padding-bottom:90px}
   .count b{font-size:1.4rem}
   .door span{padding-inline:14px}
 }
+/* Layar pendek (laptop & HP): cover muat satu layar */
+@media (max-height:1000px){
+  .cover section{padding-block:32px 28px}
+  .cover .wrap{gap:12px}
+  .emblem-slot{height:clamp(110px,calc(100svh - 500px),280px);width:min(320px,100%)}
+  .names{font-size:clamp(2.5rem,7svh,4.6rem);line-height:1}
+  .names .amp{margin:.12em 0}
+  .guest{gap:0}
+}
+/* Pengaman: bila layar terlalu pendek, isi cover tetap bisa digulir */
+html.locked .cover{height:100vh;height:100svh;min-height:0}
+html.locked .cover>section{min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none}
+html.locked .cover>section::-webkit-scrollbar{display:none}
+.cover>section{display:flex;flex-direction:column}
+.cover>section>.wrap{margin-block:auto;width:100%}
 @media (max-height:780px) and (max-width:560px){
   .cover section{padding-block:30px 24px}
   .cover .wrap{gap:10px}
@@ -332,6 +347,11 @@ footer{padding-bottom:90px}
   .guest strong{font-size:1.2rem}
   .scroll-hint{display:none}
 }
+/* ===== Cegah geser kanan-kiri di HP ===== */
+html,body{max-width:100%}
+main,footer,.cover{overflow-x:hidden;overflow-x:clip}
+.gate{overflow:hidden}
+
 /* ===== Kunci halaman sebelum undangan dibuka ===== */
 html.locked,html.locked body{overflow:hidden;height:100%;overscroll-behavior:none}
 html.locked .dock,html.locked .progress{display:none}
@@ -347,8 +367,8 @@ html.locked .dock,html.locked .progress{display:none}
 .gate.open::after{opacity:0;transition:opacity .9s}
 .door span{transition:transform .8s,opacity .8s}
 .gate.open .door span{opacity:0;transform:scale(.7)}
-.burst{position:fixed;left:50%;top:50%;width:0;height:0;z-index:60;pointer-events:none}
-.burst i{position:absolute;width:12px;height:12px;margin:-6px;border-radius:80% 0 80% 0}
+.burst{position:fixed;inset:0;z-index:60;pointer-events:none;overflow:hidden}
+.burst i{position:absolute;left:50%;top:50%;width:12px;height:12px;margin:-6px;border-radius:80% 0 80% 0}
 
 /* ===== Animasi muncul 3D (berjalan juga di iPhone) ===== */
 .rv{opacity:0;transform:var(--from);transition:opacity .9s ease,transform 1.15s cubic-bezier(.2,.75,.2,1);transition-delay:var(--d,0s);will-change:transform,opacity}
@@ -694,7 +714,13 @@ h2.rv.in::after{transform:none}
   // ===== Kunci gulir sampai "Buka Undangan" ditekan =====
   var root=document.documentElement, main=document.querySelector("main");
   var lockEls=[main, document.querySelector("footer"), document.getElementById("dock")];
-  function block(e){ if(root.classList.contains("locked")) e.preventDefault(); }
+  var coverSec=document.querySelector(".cover > section");
+  function block(e){
+    if(!root.classList.contains("locked")) return;
+    // izinkan gulir di dalam cover bila isinya lebih tinggi dari layar
+    if(coverSec.contains(e.target) && coverSec.scrollHeight > coverSec.clientHeight+1) return;
+    e.preventDefault();
+  }
   function blockKeys(e){ if(root.classList.contains("locked") && [" ","PageDown","PageUp","ArrowDown","ArrowUp","End","Home"].indexOf(e.key)>-1 && !/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) e.preventDefault(); }
   addEventListener("wheel",block,{passive:false});
   addEventListener("touchmove",block,{passive:false});
