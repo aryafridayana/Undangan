@@ -283,6 +283,57 @@ input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 
 .dock a svg{width:18px;height:18px}
 .dock a.on,.dock a:hover{background:rgba(196,155,80,.18);color:var(--gold)}
 footer{padding-bottom:90px}
+
+/* ===== Penyesuaian layar HP ===== */
+.cover{min-height:100vh;min-height:100svh}
+@media (max-width:560px){
+  section{padding-block:52px}
+  .cover section{padding-block:44px 36px}
+  .cover .wrap{gap:16px}
+  .emblem-slot{width:min(260px,100%);height:clamp(190px,30svh,240px)}
+  .emblem{width:104px}
+  .names{font-size:clamp(2.9rem,15vw,4rem)}
+  .date-line{font-size:.82rem;letter-spacing:.16em;padding:7px 12px}
+  .greet{font-size:.75rem;gap:10px}
+  .frame{inset:22px 10px}
+  .frame i{width:30px;height:30px}
+  .couple{gap:14px;margin-top:30px}
+  .portrait{width:140px}
+  .couple-amp{font-size:3rem;line-height:1}
+  .count{gap:6px}
+  .count div{padding:12px 2px}
+  .count span{font-size:.6rem;letter-spacing:.1em}
+  .accounts .acct{padding:18px}
+  .acct .no{font-size:1.3rem}
+  .btn{padding:12px 22px}
+  #rsvpForm .btn{justify-self:stretch!important;justify-content:center}
+  .wish{padding:12px 14px}
+  .wish::before{width:32px;height:32px;font-size:.9rem}
+  .dress{padding:14px}
+}
+@media (max-width:480px){
+  .gallery div:nth-child(6){grid-column:span 2;aspect-ratio:16/10}
+  .meta{grid-template-columns:1fr;gap:0}
+  .meta dt{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;margin-top:6px}
+  .meta dt:first-child{margin-top:0}
+}
+@media (max-width:360px){
+  body{font-size:16px}
+  .dock a{min-width:0;padding:6px 7px;font-size:.55rem}
+  .count b{font-size:1.4rem}
+  .door span{padding-inline:14px}
+}
+@media (max-height:780px) and (max-width:560px){
+  .cover section{padding-block:30px 24px}
+  .cover .wrap{gap:10px}
+  .emblem-slot{height:clamp(110px,calc(100svh - 470px),240px)}
+  .emblem{width:84px}
+  .names{font-size:clamp(2.5rem,12vw,3.2rem);line-height:1}
+  .names .amp{margin:.1em 0}
+  .guest{gap:0;font-size:.85rem}
+  .guest strong{font-size:1.2rem}
+  .scroll-hint{display:none}
+}
 </style>
 </head>
 <body>
@@ -579,7 +630,7 @@ footer{padding-bottom:90px}
 
   // ===== Efek miring 3D saat disentuh/diarahkan =====
   document.querySelectorAll(".gallery div").forEach(function(el){el.classList.add("tilt")});
-  if (!reduce) document.querySelectorAll(".tilt").forEach(function(el){
+  if (!reduce && matchMedia("(hover: hover) and (pointer: fine)").matches) document.querySelectorAll(".tilt").forEach(function(el){
     el.addEventListener("pointermove",function(e){
       var r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
       el.style.transform="perspective(700px) rotateY("+(x*16)+"deg) rotateX("+(-y*16)+"deg) translateZ(8px)";
