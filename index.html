@@ -15,6 +15,7 @@ img{max-width:100%}
 [hidden]{display:none!important}
 </style>
 <title>Josua &amp; Larasati</title>
+<script>document.documentElement.classList.add("locked");if("scrollRestoration" in history)history.scrollRestoration="manual";</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Pinyon+Script&family=Spectral:ital,wght@0,400;0,500;1,400&display=swap">
 <style>
@@ -175,10 +176,7 @@ footer{background:var(--soga-deep);color:#a8927c;font-size:.8rem;text-align:cent
 .petals i.r{background:var(--ulos)}
 @keyframes fall{to{transform:translate3d(var(--dx,40px),1400px,0) rotate(720deg)}}
 
-@supports (animation-timeline: view()){
-  .reveal{animation:revealIn linear both;animation-timeline:view();animation-range:entry 0% cover 28%}
-  @keyframes revealIn{from{opacity:0;transform:perspective(900px) rotateX(22deg) translateY(46px) scale(.96)}to{opacity:1;transform:none}}
-}
+
 
 .tilt{transition:transform .3s ease-out;will-change:transform}
 .count div{perspective:500px}
@@ -334,6 +332,63 @@ footer{padding-bottom:90px}
   .guest strong{font-size:1.2rem}
   .scroll-hint{display:none}
 }
+/* ===== Kunci halaman sebelum undangan dibuka ===== */
+html.locked,html.locked body{overflow:hidden;height:100%;overscroll-behavior:none}
+html.locked .dock,html.locked .progress{display:none}
+
+/* ===== Gapura: menutup lalu membuka ===== */
+.gate.on .door.l{transform:translateX(-101%);transition:none}
+.gate.on .door.r{transform:translateX(101%);transition:none}
+.gate.shut .door.l,.gate.shut .door.r{transform:none;transition:transform .75s cubic-bezier(.6,0,.3,1)}
+.gate.open .door.l{transform:rotateY(-110deg);transition:transform 1.8s cubic-bezier(.65,.05,.2,1)}
+.gate.open .door.r{transform:rotateY(110deg);transition:transform 1.8s cubic-bezier(.65,.05,.2,1)}
+.gate::after{content:"";position:absolute;left:50%;top:0;bottom:0;width:4px;transform:translateX(-50%) scaleY(0);background:linear-gradient(transparent,#ffe7ae,transparent);box-shadow:0 0 40px 14px rgba(255,214,140,.7);opacity:0;transition:transform .6s .55s,opacity .4s .55s}
+.gate.shut::after{transform:translateX(-50%) scaleY(1);opacity:1}
+.gate.open::after{opacity:0;transition:opacity .9s}
+.door span{transition:transform .8s,opacity .8s}
+.gate.open .door span{opacity:0;transform:scale(.7)}
+.burst{position:fixed;left:50%;top:50%;width:0;height:0;z-index:60;pointer-events:none}
+.burst i{position:absolute;width:12px;height:12px;margin:-6px;border-radius:80% 0 80% 0}
+
+/* ===== Animasi muncul 3D (berjalan juga di iPhone) ===== */
+.rv{opacity:0;transform:var(--from);transition:opacity .9s ease,transform 1.15s cubic-bezier(.2,.75,.2,1);transition-delay:var(--d,0s);will-change:transform,opacity}
+.rv.in{opacity:1;transform:none}
+.rv-up{--from:perspective(900px) rotateX(32deg) translateY(60px)}
+.rv-left{--from:perspective(900px) rotateY(40deg) translateX(-70px)}
+.rv-right{--from:perspective(900px) rotateY(-40deg) translateX(70px)}
+.rv-flip{--from:perspective(700px) rotateY(95deg) scale(.9)}
+.rv-flipx{--from:perspective(700px) rotateX(-95deg)}
+.rv-zoom{--from:perspective(900px) translateZ(-260px) rotateX(18deg)}
+h2.rv::after{transform:scaleX(0);transition:transform 1s cubic-bezier(.2,.75,.2,1) .45s}
+h2.rv.in::after{transform:none}
+.tilt.rv.done{transition:transform .3s ease-out}
+
+/* ===== Gerak halus terus-menerus ===== */
+.float{animation:floaty 6s ease-in-out infinite;transform-style:preserve-3d}
+.p-jawa .float{animation-delay:-3s}
+@keyframes floaty{0%,100%{transform:perspective(800px) translateY(0) rotateY(-7deg)}50%{transform:perspective(800px) translateY(-10px) rotateY(7deg)}}
+.portrait div{position:relative;overflow:hidden}
+.portrait div::after{content:"";position:absolute;inset:-20%;background:linear-gradient(105deg,transparent 40%,rgba(255,236,190,.38) 50%,transparent 60%);transform:translateX(-120%);animation:sweep 5.5s ease-in-out infinite}
+.p-jawa .portrait div::after{animation-delay:2.7s}
+@keyframes sweep{0%,55%{transform:translateX(-120%)}85%,100%{transform:translateX(120%)}}
+.couple-amp{display:inline-block;animation:spinY 5s ease-in-out infinite}
+@keyframes spinY{0%,60%{transform:perspective(500px) rotateY(0)}80%,100%{transform:perspective(500px) rotateY(360deg)}}
+.event.in .num{animation:coin 1.2s .35s cubic-bezier(.2,.75,.2,1) both}
+@keyframes coin{from{transform:perspective(400px) rotateY(-540deg) scale(.4)}to{transform:none}}
+.btn{position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,240,205,.35) 50%,transparent 65%);transform:translateX(-120%);animation:sweep 4.5s ease-in-out infinite;pointer-events:none}
+@media (hover:none){
+  .acct.done{animation:cardFloat 7s ease-in-out infinite}
+  .accounts .acct.done:nth-child(2){animation-delay:-3.5s}
+}
+@keyframes cardFloat{0%,100%{transform:perspective(800px) rotateX(5deg) rotateY(-8deg)}50%{transform:perspective(800px) rotateX(-4deg) rotateY(8deg) translateY(-6px)}}
+.dark:not(.cover){position:relative;overflow:hidden}
+.dark:not(.cover)>.wrap{position:relative;z-index:1}
+.sparks{position:absolute;inset:0;pointer-events:none}
+.sparks i{position:absolute;bottom:-10px;width:4px;height:4px;border-radius:50%;background:#f0d79c;box-shadow:0 0 8px 2px rgba(240,215,156,.6);animation:rise2 linear infinite;opacity:0}
+@keyframes rise2{0%{transform:translateY(0) scale(.6);opacity:0}15%{opacity:.9}100%{transform:translate(var(--dx,20px),-110vh) scale(1.1);opacity:0}}
+.cover .emblem-slot,.cover .names{will-change:transform}
+@media (prefers-reduced-motion: reduce){.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -371,7 +426,6 @@ footer{padding-bottom:90px}
         <span>di tempat</span>
       </div>
       <a class="btn" href="#mempelai">Buka Undangan</a>
-      <span class="scroll-hint" aria-hidden="true">GULIR</span>
     </div>
   </section>
   <div class="gorga flip"></div>
@@ -386,7 +440,7 @@ footer{padding-bottom:90px}
     <p class="intro" style="margin-top:18px">Dengan penuh sukacita dan rasa syukur, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada hari pernikahan kami, yang mempertemukan adat Batak Toba dan adat Jawa dalam satu perayaan.</p>
     <div class="couple">
       <div class="person p-batak reveal">
-        <div class="portrait tilt"><div>J</div></div>
+        <div class="float"><div class="portrait tilt"><div>J</div></div></div>
         <span class="call">Josua</span>
         <h3>Josua Parulian Simanjuntak</h3>
         <p>Putra kedua dari<br>Bapak Robert Simanjuntak &amp;<br>Ibu Rosmaida br. Sitorus</p>
@@ -394,7 +448,7 @@ footer{padding-bottom:90px}
       </div>
       <div class="couple-amp">&amp;</div>
       <div class="person p-jawa reveal">
-        <div class="portrait tilt"><div>L</div></div>
+        <div class="float"><div class="portrait tilt"><div>L</div></div></div>
         <span class="call">Larasati</span>
         <h3>Larasati Ayu Wulandari</h3>
         <p>Putri pertama dari<br>Bapak Hadi Prasetyo &amp;<br>Ibu Sri Rahayu</p>
@@ -629,7 +683,6 @@ footer{padding-bottom:90px}
   }
 
   // ===== Efek miring 3D saat disentuh/diarahkan =====
-  document.querySelectorAll(".gallery div").forEach(function(el){el.classList.add("tilt")});
   if (!reduce && matchMedia("(hover: hover) and (pointer: fine)").matches) document.querySelectorAll(".tilt").forEach(function(el){
     el.addEventListener("pointermove",function(e){
       var r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
@@ -638,22 +691,109 @@ footer{padding-bottom:90px}
     el.addEventListener("pointerleave",function(){el.style.transform=""});
   });
 
+  // ===== Kunci gulir sampai "Buka Undangan" ditekan =====
+  var root=document.documentElement, main=document.querySelector("main");
+  var lockEls=[main, document.querySelector("footer"), document.getElementById("dock")];
+  function block(e){ if(root.classList.contains("locked")) e.preventDefault(); }
+  function blockKeys(e){ if(root.classList.contains("locked") && [" ","PageDown","PageUp","ArrowDown","ArrowUp","End","Home"].indexOf(e.key)>-1 && !/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) e.preventDefault(); }
+  addEventListener("wheel",block,{passive:false});
+  addEventListener("touchmove",block,{passive:false});
+  addEventListener("keydown",blockKeys);
+  lockEls.forEach(function(el){ if(el) el.inert=true; });
+  scrollTo(0,0);
+  function unlock(){
+    root.classList.remove("locked");
+    lockEls.forEach(function(el){ if(el) el.inert=false; });
+  }
+
+  // Ledakan kelopak saat gapura terbuka
+  function burst(){
+    if (reduce || !document.body.animate) return;
+    var box=document.createElement("div"); box.className="burst"; document.body.appendChild(box);
+    var cols=["#f7f1e3","#f7f1e3","#c49b50","#e8c47c","#9c2a1f"];
+    for (var i=0;i<46;i++){
+      var p=document.createElement("i"); p.style.background=cols[i%cols.length]; box.appendChild(p);
+      var a=Math.random()*Math.PI*2, d=160+Math.random()*Math.max(innerWidth,innerHeight)*.55;
+      var x=Math.cos(a)*d, y=Math.sin(a)*d, rz=Math.random()*720-360, rx=Math.random()*720;
+      p.animate([
+        {transform:"translate3d(0,0,0) rotateX(0) rotateZ(0) scale(.3)",opacity:1},
+        {transform:"translate3d("+x+"px,"+y+"px,0) rotateX("+rx+"deg) rotateZ("+rz+"deg) scale(1)",opacity:1,offset:.45},
+        {transform:"translate3d("+(x*1.15)+"px,"+(y+260)+"px,0) rotateX("+(rx*2)+"deg) rotateZ("+(rz*1.6)+"deg) scale(.9)",opacity:0}
+      ],{duration:2200+Math.random()*1200,easing:"cubic-bezier(.15,.7,.3,1)",fill:"forwards"});
+    }
+    setTimeout(function(){ box.remove(); },3800);
+  }
+
+  function jump(el){
+    root.style.scrollBehavior="auto";
+    scrollTo(0, el.getBoundingClientRect().top + scrollY);
+    setTimeout(function(){ root.style.scrollBehavior=""; },50);
+  }
+
   // ===== Gapura terbuka saat "Buka Undangan" =====
-  var gate=document.getElementById("gate");
+  var gate=document.getElementById("gate"), opening=false;
   document.querySelector(".cover .btn").addEventListener("click",function(e){
-    var t=document.getElementById("mempelai");
-    if (reduce){ return; }
     e.preventDefault();
-    gate.classList.remove("open"); gate.classList.add("on");
-    requestAnimationFrame(function(){
-      t.scrollIntoView({behavior:"auto"});
-      requestAnimationFrame(function(){ setTimeout(function(){ gate.classList.add("open"); },250); });
-    });
-    setTimeout(function(){ gate.classList.remove("on"); gate.classList.remove("open"); },2300);
+    if (opening) return;
+    var t=document.getElementById("mempelai");
+    if (reduce){ unlock(); jump(t); return; }
+    opening=true;
+    gate.className="gate on";
+    void gate.offsetWidth;
+    gate.classList.add("shut");
+    setTimeout(function(){
+      unlock();
+      jump(t);
+      onScroll();
+      requestAnimationFrame(function(){ gate.classList.add("open"); burst(); });
+    },1150);
+    setTimeout(function(){ gate.className="gate"; opening=false; },3300);
   });
+
+  // ===== Animasi muncul 3D saat digulir =====
+  if (!reduce){
+    function rv(el,kind,delay){ if(!el) return; el.classList.add("rv","rv-"+kind); if(delay) el.style.setProperty("--d",delay+"s"); }
+    document.querySelectorAll("main section").forEach(function(sec){
+      var k=0;
+      sec.querySelectorAll(".wrap > .eyebrow, .wrap > h2, .wrap > .intro, .wrap > .center > .eyebrow, .wrap > .center > h2, .wrap > p:not(.thanks-big), .closing .stack > *").forEach(function(el){ rv(el,"up",(k++)*.12); });
+    });
+    rv(document.querySelector(".p-batak"),"left");
+    rv(document.querySelector(".p-jawa"),"right",.15);
+    rv(document.querySelector(".couple-amp"),"zoom",.3);
+    document.querySelectorAll(".count > div").forEach(function(el,i){ rv(el,"flipx",i*.12); });
+    rv(document.querySelector(".cal-btn"),"up",.5);
+    document.querySelectorAll(".event").forEach(function(el,i){ rv(el,i%2?"right":"left"); });
+    rv(document.querySelector(".dress"),"up");
+    document.querySelectorAll(".gallery > div").forEach(function(el,i){ rv(el,"flip",i*.1); });
+    rv(document.getElementById("rsvpForm"),"zoom");
+    rv(document.getElementById("wishes"),"up",.1);
+    document.querySelectorAll(".acct").forEach(function(el,i){ rv(el,"flip",i*.18); });
+    document.querySelectorAll(".reveal:not(.rv)").forEach(function(el){ rv(el,"up"); });
+    var items=document.querySelectorAll(".rv");
+    function show(el){ el.classList.add("in"); setTimeout(function(){ el.classList.add("done"); },1600); }
+    if ("IntersectionObserver" in window){
+      var io=new IntersectionObserver(function(en){ en.forEach(function(x){ if(x.isIntersecting){ show(x.target); io.unobserve(x.target); } }); },{rootMargin:"0px 0px -12% 0px",threshold:.08});
+      items.forEach(function(el){ io.observe(el); });
+    } else items.forEach(show);
+
+    // Percikan emas di bagian gelap
+    document.querySelectorAll("main .dark").forEach(function(sec){
+      var sp=document.createElement("div"); sp.className="sparks"; sp.setAttribute("aria-hidden","true");
+      for (var i=0;i<14;i++){
+        var e=document.createElement("i");
+        e.style.left=(Math.random()*100)+"%";
+        e.style.setProperty("--dx",(Math.random()*80-40)+"px");
+        e.style.animationDuration=(6+Math.random()*7)+"s";
+        e.style.animationDelay=(-Math.random()*12)+"s";
+        sp.appendChild(e);
+      }
+      sec.prepend(sp);
+    });
+  }
 
   // ===== Bilah progres & navigasi bawah =====
   var bar=document.getElementById("progress"), dock=document.getElementById("dock");
+  var cw=document.querySelector(".cover .wrap");
   var navLinks=[].slice.call(dock.querySelectorAll("a"));
   var secs=navLinks.map(function(a){return document.querySelector(a.getAttribute("href"))});
   function onScroll(){
@@ -662,6 +802,11 @@ footer{padding-bottom:90px}
     dock.classList.toggle("show", scrollY > innerHeight*.6);
     var cur=-1; secs.forEach(function(s,i){ if(s && s.getBoundingClientRect().top < innerHeight*.45) cur=i; });
     navLinks.forEach(function(a,i){a.classList.toggle("on",i===cur)});
+    if (!reduce && scrollY < innerHeight*1.2){
+      var y=scrollY;
+      cw.style.transform="translateY("+(y*.4)+"px) scale("+(1-y/innerHeight*.08)+")";
+      cw.style.opacity=String(Math.max(0,1-y/innerHeight*1.1));
+    }
   }
   addEventListener("scroll",onScroll,{passive:true}); onScroll();
 
