@@ -12,5 +12,6 @@ Semua foto dari Wikimedia Commons, dipotong dan dikompres ke WebP.
 | galeri-6.webp | [Bride and groom hold hands (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Bride_and_groom_hold_hands_(Unsplash).jpg) | Wu Jianxiong | CC0 |
 | kain-ulos.webp | [Doek Ulos godang, AK-MAK-1742-86.jpg](https://commons.wikimedia.org/wiki/File:Doek_Ulos_godang,_AK-MAK-1742-86.jpg) | Rijksmuseum | CC0 |
 | kain-batik.webp | [Kain kapala (headcloth) from Java, c. 1929, Honolulu Museum of Art.jpg](https://commons.wikimedia.org/wiki/File:Kain_kapala_(headcloth)_from_Java,_c._1929,_Honolulu_Museum_of_Art.jpg) | Honolulu Museum of Art (Hiart) | CC0 |
+| kado.webp | [Gift box I.jpg](https://commons.wikimedia.org/wiki/File:Gift_box_I.jpg) | Milad Mosapoor | Atribusi (wajib mencantumkan nama pembuat) |
 
 Foto galeri adalah contoh. Ganti dengan foto prewedding asli sebelum undangan disebar.

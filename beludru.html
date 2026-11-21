@@ -325,6 +325,12 @@ main>section+section:not(.velvet+.velvet):not(.suede+.suede)>.seam{display:block
 .closing .env2b{position:absolute;left:0;bottom:0;width:100%;aspect-ratio:300/170;z-index:0;filter:drop-shadow(0 20px 24px rgba(0,0,0,.55))}
 .closing .env2b svg{width:100%;height:100%;display:block}
 .closing .oval{z-index:1}
+
+/* kado foto */
+.gift-ico{width:clamp(118px,34vw,150px);margin:6px auto 30px}
+.gift-ico img{display:block;width:100%;height:auto;transform:rotate(-4deg);filter:drop-shadow(0 18px 22px rgba(0,0,0,.6)) drop-shadow(0 0 1px rgba(255,235,220,.35));animation:giftFloat 5s ease-in-out infinite}
+@keyframes giftFloat{0%,100%{transform:rotate(-4deg) translateY(0)}50%{transform:rotate(-2deg) translateY(-6px)}}
+@media (prefers-reduced-motion:reduce){.gift-ico img{animation:none}}
 </style>
 </head>
 <body>
@@ -500,7 +506,7 @@ main>section+section:not(.velvet+.velvet):not(.suede+.suede)>.seam{display:block
   <div class="floral flip sway" data-floral="bunga-juntai" style="left:6px;top:6px;width:14%"></div>
   <div class="floral sway b" data-floral="bunga-juntai" style="right:6px;top:6px;width:14%"></div>
   <h2 class="title rv">Wedding Gift</h2>
-  <div class="gift-ico rv" data-svg="gift"></div>
+  <div class="gift-ico rv"><img src="aset/foto/kado.webp" alt="Kotak kado beludru merah berpita" loading="lazy" decoding="async"></div>
   <p class="lead rv">Doa restu dan kehadiran Anda merupakan karunia yang sangat berarti bagi kami.</p>
   <p class="lead rv" style="margin-top:18px">Namun, jika memberi adalah ungkapan tanda kasih, Anda dapat memberi melalui rekening di bawah ini.</p>
   <div class="acct rv">
@@ -577,7 +583,7 @@ main>section+section:not(.velvet+.velvet):not(.suede+.suede)>.seam{display:block
 <footer>JOSUA &amp; LARASATI · 12.06.2027
   <details class="credit"><summary>Kredit foto</summary>
     <p>Rangkaian bunga disusun dari foto Wikimedia Commons; hasil susunannya berlisensi <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Foto oleh: Leonora Enking (CC BY-SA 2.0), Balise42 (CC BY-SA 4.0), Tubifex (CC BY-SA 3.0), Nesnad (CC BY 4.0), Bff (CC BY-SA 3.0), Rabe! &amp; Fmi2012 (CC BY-SA 3.0), B.navez (CC BY-SA 3.0), Amada44 (CC BY 3.0), Kurt Stüber (CC BY-SA 3.0), Filo gèn' (CC BY-SA 4.0), Laitche (CC BY-SA 4.0), SzinNapalm (CC BY 4.0), Downtowngal (CC BY-SA 4.0), ChickenFreak &amp; Dusan Bicanski (domain publik). Rincian: <a href="aset/bunga/KREDIT.md" target="_blank" rel="noopener">KREDIT.md</a>.</p>
-    <p>Foto galeri &amp; kain: Drew Coffman, Petr Ovralov, Paul García, Anne Edgar, Wu Jianxiong (Unsplash, CC0); Astari28 (CC BY 4.0); Rijksmuseum &amp; Honolulu Museum of Art (CC0). Rincian: <a href="aset/foto/KREDIT.md" target="_blank" rel="noopener">KREDIT.md</a>.</p>
+    <p>Foto kado: Milad Mosapoor (Wikimedia Commons, atribusi). Foto galeri &amp; kain: Drew Coffman, Petr Ovralov, Paul García, Anne Edgar, Wu Jianxiong (Unsplash, CC0); Astari28 (CC BY 4.0); Rijksmuseum &amp; Honolulu Museum of Art (CC0). Rincian: <a href="aset/foto/KREDIT.md" target="_blank" rel="noopener">KREDIT.md</a>.</p>
   </details>
 </footer>
 </div>
