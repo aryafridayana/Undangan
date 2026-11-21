@@ -118,14 +118,14 @@ html.locked,html.locked body{overflow:hidden;height:100%;overscroll-behavior:non
 .doily .q b{font-family:var(--f-script);font-weight:400;font-size:2.1em;line-height:1;color:#5a0f1b}
 .doily .q small{font-size:.85em;letter-spacing:.14em;color:#6b5a4c}
 .doily .tassel{position:absolute;left:50%;bottom:calc(var(--w) * -.2);width:calc(var(--w) * .1);margin-left:calc(var(--w) * -.05);transform-origin:50% 0;animation:sway 3.5s ease-in-out infinite}
-.env .fl1{left:calc(var(--w) * -.19);top:calc(var(--w) * -.1);width:calc(var(--w) * .46);z-index:6}
-.env .fl2{right:calc(var(--w) * -.17);top:calc(var(--w) * .2);width:calc(var(--w) * .36);z-index:6}
+.env .fl1{left:calc(var(--w) * -.06);top:calc(var(--w) * -.1);width:calc(var(--w) * .4);z-index:6}
+.env .fl2{right:calc(var(--w) * -.06);top:calc(var(--w) * .22);width:calc(var(--w) * .31);z-index:6}
 .cv-hint{position:absolute;left:-10%;right:-10%;top:calc(var(--w) * 1.5);display:grid;gap:calc(var(--w) * .035);justify-items:center;transition:opacity .6s;animation:fadeUp 1.2s 1s var(--ease) backwards}
 .cv-hint .click{font-size:calc(var(--w) * .04);letter-spacing:.24em;font-weight:500}
 .cv-hint .guest{font-size:calc(var(--w) * .042);line-height:1.35;color:#d9d2c3}
 .cv-hint .guest strong{display:block;font-weight:600;font-size:1.3em;color:var(--cream);letter-spacing:.03em}
-.cover .corner{position:absolute;bottom:0;width:clamp(92px,26%,140px);z-index:3}
-.cover .corner.l{left:-2%}.cover .corner.r{right:-2%}
+.cover .corner{position:absolute;bottom:3px;width:clamp(92px,26%,140px);z-index:3}
+.cover .corner.l{left:6px}.cover .corner.r{right:6px}
 .cover .corner img{-webkit-mask-image:linear-gradient(180deg,#000 80%,transparent 99%);mask-image:linear-gradient(180deg,#000 80%,transparent 99%)}
 .scroll-hint{position:absolute;left:0;right:0;bottom:1.5%;z-index:7;text-shadow:0 1px 6px #000;display:grid;justify-items:center;gap:6px;font-size:.72rem;letter-spacing:.3em;opacity:0;transition:opacity 1s .4s;pointer-events:none}
 .scroll-hint::after{content:"";width:1px;height:30px;background:linear-gradient(var(--cream),transparent);animation:drip 1.8s ease-in-out infinite}
@@ -274,8 +274,8 @@ textarea{min-height:90px;resize:vertical}
 .closing .env2 svg{width:100%;height:100%}
 .closing .tassel2{position:absolute;left:50%;top:66%;width:11%;margin-left:-5.5%;z-index:2;transform-origin:50% 0;animation:sway 3.5s ease-in-out infinite}
 .closing .fl3{right:-10%;bottom:-6%;width:46%}
-.closing .hang{top:0;width:40%}
-.closing .hang.l{left:-6%}.closing .hang.r{right:-6%}
+.closing .hang{top:6px;width:32%}
+.closing .hang.l{left:6px}.closing .hang.r{right:6px}
 footer{padding:20px 16px 26px;text-align:center;font-size:.8rem;letter-spacing:.22em;color:#d9c9b5;background:var(--burg-d)}
 .credit{margin:10px auto 0;max-width:420px;letter-spacing:0;font-size:.72rem;color:#b9a896}
 .credit summary{cursor:pointer;letter-spacing:.1em}
@@ -312,6 +312,14 @@ main>section+section:not(.velvet+.velvet):not(.suede+.suede)>.seam{display:block
   background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.18) 45%,transparent),
   repeating-linear-gradient(90deg,rgba(201,169,106,.55) 0 7px,transparent 7px 13px) 0 5px/100% 1px no-repeat}
 .seam-b{position:absolute;left:0;right:0;bottom:0;height:40px;pointer-events:none;background:linear-gradient(0deg,rgba(0,0,0,.35),transparent)}
+
+/* bunga tidak menutupi teks */
+#mempelai{padding-bottom:calc(clamp(80px,22vw,110px) * 1.34 + 18px)}
+#hadiah .title,#hadiah .gift-ico{position:relative;z-index:4}
+#hadiah{padding-top:64px!important}
+.cover .corner{width:min(clamp(64px,24%,130px),15svh)}
+@media (max-height:720px){.cover .corner{width:min(clamp(56px,18%,96px),11svh)}}
+.cover .cv-hint{position:relative;z-index:4}
 </style>
 </head>
 <body>
@@ -380,13 +388,13 @@ main>section+section:not(.velvet+.velvet):not(.suede+.suede)>.seam{display:block
       </div>
     </div>
   </div>
-  <div class="floral sway" data-floral="bunga-kecil" style="left:-9%;bottom:-9%;width:26%"></div>
+  <div class="floral sway" data-floral="bunga-kecil" style="left:6px;bottom:6px;width:clamp(80px,22%,110px)"></div>
 </section>
 
 <!-- ===== SAVE THE DATE ===== -->
 <section class="suede std" id="tanggal" data-sparks="6">
-  <div class="floral sway" data-floral="bunga-juntai" style="right:-10%;top:-3%;width:29%"></div>
-  <div class="floral flip sway b" data-floral="bunga-juntai" style="left:-10%;top:-4%;width:28%"></div>
+  <div class="floral sway" data-floral="bunga-juntai" style="right:6px;top:6px;width:25%"></div>
+  <div class="floral flip sway b" data-floral="bunga-juntai" style="left:6px;top:6px;width:23%"></div>
   <div class="big rv">
     <span class="a">Save</span>
     <span class="b">the</span>
@@ -484,8 +492,8 @@ main>section+section:not(.velvet+.velvet):not(.suede+.suede)>.seam{display:block
 
 <!-- ===== HADIAH ===== -->
 <section class="velvet" id="hadiah" data-sparks="6" style="padding-top:30px">
-  <div class="floral flip sway" data-floral="bunga-juntai" style="left:-6%;top:-2%;width:22%"></div>
-  <div class="floral sway b" data-floral="bunga-juntai" style="right:-6%;top:-2%;width:22%"></div>
+  <div class="floral flip sway" data-floral="bunga-juntai" style="left:6px;top:6px;width:16%"></div>
+  <div class="floral sway b" data-floral="bunga-juntai" style="right:6px;top:6px;width:16%"></div>
   <h2 class="title rv">Wedding Gift</h2>
   <div class="gift-ico rv" data-svg="gift"></div>
   <p class="lead rv">Doa restu dan kehadiran Anda merupakan karunia yang sangat berarti bagi kami.</p>
@@ -594,7 +602,7 @@ main>section+section:not(.velvet+.velvet):not(.suede+.suede)>.seam{display:block
       '<path d="M0 0L150 108L300 0V195H0Z" fill="url(#ef)"/>'+
       '<path d="M0 0L150 108L300 0" fill="none" stroke="rgba(120,100,80,.18)" stroke-width="1.2"/>'+
       '<path d="M0 195L150 118L300 195" fill="none" stroke="rgba(120,100,80,.1)" stroke-width="1"/>'+
-      '<rect x=".5" y=".5" width="299" height="194" rx="3" fill="none" stroke="rgba(0,0,0,.06)"/></svg>';
+      '<path d="M.5 1V191.5Q.5 194.5 3.5 194.5H296.5Q299.5 194.5 299.5 191.5V1" fill="none" stroke="rgba(0,0,0,.06)"/></svg>';
   };
   G.flap = function(){
     var s = '<svg viewBox="0 0 300 125" preserveAspectRatio="none" style="overflow:visible"><defs><linearGradient id="fl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ece6da"/><stop offset="1" stop-color="#f6f2ea"/></linearGradient></defs>';
