@@ -17,5 +17,9 @@ Gambar `bunga-besar.webp`, `bunga-kecil.webp`, `bunga-juntai.webp`, dan `bunga-l
 | [White Peony Blossom](https://commons.wikimedia.org/wiki/File:White_Peony_Blossom.jpg) | ChickenFreak | Domain publik |
 | [White peony flower](https://commons.wikimedia.org/wiki/File:White_peony_flower.jpg) | Dusan Bicanski | Domain publik |
 | [White Lisianthus flower](https://commons.wikimedia.org/wiki/File:White_Lisianthus_flower.jpg) | Downtowngal | CC BY-SA 4.0 |
+| [Extracted pink rose](https://commons.wikimedia.org/wiki/File:Extracted_pink_rose.png) | Kurt Stüber | CC BY-SA 3.0 |
+| [Rosa Red Chateau on black background](https://commons.wikimedia.org/wiki/File:Rosa_Red_Chateau_on_black_background.jpg) | Filo gèn' | CC BY-SA 4.0 |
+| [Rose Papa Meilland on black background](https://commons.wikimedia.org/wiki/File:Rose_Papa_Meilland_on_black_background.jpg) | Filo gèn' | CC BY-SA 4.0 |
+| [Red rose with black background](https://commons.wikimedia.org/wiki/File:Red_rose_with_black_background.jpg) | Laitche | CC BY-SA 4.0 |
 
-Perubahan: latar foto dihapus, kecerahan mawar krem dinaikkan, bayam ekor kucing digeser ke burgundi, buah hypericum dibuat krem, lalu semuanya disusun menjadi rangkaian.
+Perubahan: latar foto dihapus; mawar merah digelapkan ke burgundi, mawar pink diredam ke dusty rose, kecerahan mawar krem dinaikkan, bayam ekor kucing digeser ke burgundi, buah hypericum digelapkan ke maroon; lalu semuanya disusun menjadi rangkaian dengan palet moodboard (maroon, burgundi, ivory, dusty rose, hijau).
