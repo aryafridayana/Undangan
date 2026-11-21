@@ -1,6 +1,6 @@
 # Kredit foto bunga
 
-Gambar `bunga-sudut.webp`, `bunga-sudut-bawah.webp`, `bunga-juntai.webp`, dan `bunga-lantai.webp` adalah rangkaian yang disusun dari foto-foto di bawah ini (latar dihapus, warna sedikit disesuaikan, lalu digabung). Hasil susunan ini dibagikan dengan lisensi [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+Gambar `bunga-besar.webp`, `bunga-kecil.webp`, `bunga-juntai.webp`, dan `bunga-lantai.webp` adalah rangkaian yang disusun dari foto-foto di bawah ini (latar dihapus, warna sedikit disesuaikan, lalu digabung). Hasil susunan ini dibagikan dengan lisensi [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 | Foto | Pembuat | Lisensi |
 |---|---|---|
@@ -11,6 +11,7 @@ Gambar `bunga-sudut.webp`, `bunga-sudut-bawah.webp`, `bunga-juntai.webp`, dan `b
 | [Rose20090913 36](https://commons.wikimedia.org/wiki/File:Rose20090913_36.png) | Bff | CC BY-SA 3.0 |
 | [Pear leaf](https://commons.wikimedia.org/wiki/File:Pear_LeafTransparent.png) | Rabe!, Fmi2012 | CC BY-SA 3.0 |
 | [Litchi chinensis leaf](https://commons.wikimedia.org/wiki/File:Litchi_chinensis_leaf.png) | B.navez | CC BY-SA 3.0 |
+| [Zantedeschia aethiopica](https://commons.wikimedia.org/wiki/File:Zantedeschia_aethiopica_002.png) | Amada44 | CC BY 3.0 |
 | [Blanche Rose on black background](https://commons.wikimedia.org/wiki/File:Blanche_Rose_on_black_background.jpg) | Filo gèn' | CC BY-SA 4.0 |
 | [Rose in the dark](https://commons.wikimedia.org/wiki/File:Rose_in_the_dark.jpg) | SzinNapalm | CC BY 4.0 |
 | [White Peony Blossom](https://commons.wikimedia.org/wiki/File:White_Peony_Blossom.jpg) | ChickenFreak | Domain publik |
