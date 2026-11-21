@@ -300,6 +300,17 @@ footer{padding:20px 16px 26px;text-align:center;font-size:.8rem;letter-spacing:.
 .p1 .photo{background:radial-gradient(ellipse at 50% 40%,rgba(255,220,200,.12),rgba(0,0,0,.25)),url(aset/foto/kain-ulos.webp) center/cover}
 .p2 .photo{background:radial-gradient(ellipse at 50% 40%,rgba(0,0,0,.05),rgba(0,0,0,.4)),url(aset/foto/kain-batik.webp) center/cover}
 .pframe .photo span,.p2 .photo span{color:var(--cream);text-shadow:0 2px 12px rgba(0,0,0,.7)}
+
+/* ===== Latar menyambung (tanpa patahan antarbagian) ===== */
+.velvet{background-color:#560e1a;background-image:var(--grain-l),var(--grain-d),var(--mottle),linear-gradient(90deg,rgba(20,0,6,.55),rgba(20,0,6,0) 28%,rgba(20,0,6,0) 72%,rgba(20,0,6,.55))}
+.suede{background-color:#46583a;background-image:var(--grain-d),var(--mottle-l),var(--mottle),linear-gradient(90deg,rgba(10,18,6,.5),rgba(10,18,6,0) 28%,rgba(10,18,6,0) 72%,rgba(10,18,6,.5))}
+/* sambungan dua kain berbeda: lipatan + jahitan emas */
+main>section+section:not(.velvet+.velvet):not(.suede+.suede){border-top:1px solid rgba(201,169,106,.42)}
+main>section+section:not(.velvet+.velvet):not(.suede+.suede)>.seam{display:block}
+.seam{display:none;position:absolute;left:0;right:0;top:0;height:34px;pointer-events:none;z-index:1;
+  background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.18) 45%,transparent),
+  repeating-linear-gradient(90deg,rgba(201,169,106,.55) 0 7px,transparent 7px 13px) 0 5px/100% 1px no-repeat}
+.seam-b{position:absolute;left:0;right:0;bottom:0;height:40px;pointer-events:none;background:linear-gradient(0deg,rgba(0,0,0,.35),transparent)}
 </style>
 </head>
 <body>
@@ -821,6 +832,18 @@ footer{padding:20px 16px 26px;text-align:center;font-size:.8rem;letter-spacing:.
     items.forEach(function(el){ io.observe(el); });
   }
 })();
+
+  /* ---------- Tekstur latar menyambung lintas bagian ---------- */
+  (function(){
+    var secs=[].slice.call(document.querySelectorAll("main>section"));
+    secs.forEach(function(sec,k){
+      var n=secs[k+1];
+      if (n && n.className.split(" ")[0]!==sec.className.split(" ")[0]) { var b=document.createElement("i"); b.className="seam-b"; b.setAttribute("aria-hidden","true"); sec.appendChild(b); }
+      var m=document.createElement("i"); m.className="seam"; m.setAttribute("aria-hidden","true"); sec.insertBefore(m,sec.firstChild);
+    });
+    function align(){ secs.forEach(function(sec){ if(!sec.matches(".velvet,.suede"))return; sec.style.backgroundPosition="0 "+(-sec.offsetTop)+"px"; }); }
+    align(); addEventListener("resize",align); addEventListener("load",align);
+  })();
 </script>
 </body>
 </html>
