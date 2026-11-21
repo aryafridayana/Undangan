@@ -18,4 +18,4 @@ Gambar `bunga-besar.webp`, `bunga-kecil.webp`, `bunga-juntai.webp`, dan `bunga-l
 | [Daisy](https://commons.wikimedia.org/wiki/File:Daisy.png) | Lubna | CC BY-SA 3.0 |
 | [Zantedeschia aethiopica](https://commons.wikimedia.org/wiki/File:Zantedeschia_aethiopica_002.png) | Amada44 | CC BY 3.0 |
 
-Perubahan: latar foto dihapus, warna bunga & daun disesuaikan ke palet tema (merah anggur, blush, krem, zaitun), lalu disusun menjadi rangkaian.
+Perubahan: latar foto dihapus, warna bunga & daun diubah ke palet putih gading (gading, krem, sampanye, sage), lalu disusun menjadi rangkaian.
