@@ -320,6 +320,11 @@ main>section+section:not(.velvet+.velvet):not(.suede+.suede)>.seam{display:block
 .cover .corner{width:min(clamp(56px,20%,110px),12svh)}
 @media (max-height:720px){.cover .corner{width:min(clamp(48px,15%,80px),9svh)}}
 .cover .cv-hint{z-index:4}
+
+/* amplop penutup: belakang (di balik kartu) + depan (kantong) */
+.closing .env2b{position:absolute;left:0;bottom:0;width:100%;aspect-ratio:300/170;z-index:0;filter:drop-shadow(0 20px 24px rgba(0,0,0,.55))}
+.closing .env2b svg{width:100%;height:100%;display:block}
+.closing .oval{z-index:1}
 </style>
 </head>
 <body>
@@ -553,6 +558,7 @@ main>section+section:not(.velvet+.velvet):not(.suede+.suede)>.seam{display:block
   <div class="floral hang l sway" data-floral="bunga-juntai"></div>
   <div class="floral hang r flip sway b" data-floral="bunga-juntai"></div>
   <div class="stage2 rv rv-z">
+    <div class="env2b" data-svg="envOpenBack"></div>
     <div class="oval">
       <div data-svg="baroque"></div>
       <div class="butterfly" data-svg="butterfly"></div>
@@ -722,9 +728,17 @@ main>section+section:not(.velvet+.velvet):not(.suede+.suede)>.seam{display:block
     s+='</g></svg>';
     return s;
   };
+  G.envOpenBack = function(){
+    return '<svg viewBox="0 0 300 170" preserveAspectRatio="none" style="overflow:visible"><defs>'+velvetDefs+'<linearGradient id="eob" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6dfd2"/><stop offset="1" stop-color="#d6ccbb"/></linearGradient></defs>'+
+      '<path d="M1 1L150 -86L299 1Z" fill="url(#eob)" stroke="rgba(120,100,80,.25)" stroke-width="1"/>'+
+      '<path d="M14 0L150 -76L286 0Z" fill="#5d1020" filter="url(#vg)"/>'+
+      '<rect x="0" y="0" width="300" height="170" rx="3" fill="url(#eob)"/>'+
+      '<rect x="7" y="5" width="286" height="150" rx="2" fill="#5d1020" filter="url(#vg)"/>'+
+      '<path d="M0 .5H300" stroke="rgba(255,255,255,.35)" stroke-width="1"/></svg>';
+  };
   G.envOpen = function(){
     return '<svg viewBox="0 0 300 170" preserveAspectRatio="none"><defs>'+velvetDefs+'<linearGradient id="eo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f0e8"/><stop offset="1" stop-color="#e3dbcd"/></linearGradient></defs>'+
-      '<path d="M3 2H297V168H3Z" fill="#d8cfbf"/><path d="M4 2H296V108H4Z" fill="#5d1020" filter="url(#vg)"/>'+
+      
       '<path d="M0 0L150 92L300 0V170H0Z" fill="url(#eo)"/><path d="M0 0L150 92L300 0" fill="none" stroke="rgba(120,100,80,.2)" stroke-width="1.2"/>'+
       '<path d="M0 170L150 104L300 170" fill="none" stroke="rgba(120,100,80,.1)"/></svg>';
   };
