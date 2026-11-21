@@ -118,7 +118,7 @@ html.locked,html.locked body{overflow:hidden;height:100%;overscroll-behavior:non
 .doily .q b{font-family:var(--f-script);font-weight:400;font-size:2.1em;line-height:1;color:#5a0f1b}
 .doily .q small{font-size:.85em;letter-spacing:.14em;color:#6b5a4c}
 .doily .tassel{position:absolute;left:50%;bottom:calc(var(--w) * -.2);width:calc(var(--w) * .1);margin-left:calc(var(--w) * -.05);transform-origin:50% 0;animation:sway 3.5s ease-in-out infinite}
-.env .fl1{left:calc(var(--w) * -.19);top:calc(var(--w) * -.2);width:calc(var(--w) * .5);z-index:6}
+.env .fl1{left:calc(var(--w) * -.19);top:calc(var(--w) * -.1);width:calc(var(--w) * .46);z-index:6}
 .env .fl2{right:calc(var(--w) * -.18);top:calc(var(--w) * .33);width:calc(var(--w) * .4);z-index:6}
 .cv-hint{position:absolute;left:-10%;right:-10%;top:calc(var(--w) * 1.5);display:grid;gap:calc(var(--w) * .035);justify-items:center;transition:opacity .6s;animation:fadeUp 1.2s 1s var(--ease) backwards}
 .cv-hint .click{font-size:calc(var(--w) * .04);letter-spacing:.24em;font-weight:500}
@@ -163,7 +163,7 @@ html.locked,html.locked body{overflow:hidden;height:100%;overscroll-behavior:non
 
 /* ===== SAVE THE DATE ===== */
 .std{padding-bottom:0}
-.std .big{font-family:var(--f-deco);line-height:.82;display:grid;justify-items:center;position:relative}
+.std .big{z-index:3;font-family:var(--f-deco);line-height:.82;display:grid;justify-items:center;position:relative}
 .std .big .a{font-size:clamp(5rem,26vw,7.6rem);margin-left:.3em}
 .std .big .b{font-size:clamp(2.6rem,12vw,3.6rem);margin:-.05em 0 -.1em -.4em}
 .std .big .c{font-size:clamp(5rem,26vw,7.6rem);margin-right:.1em}
@@ -264,7 +264,7 @@ textarea{min-height:90px;resize:vertical}
 .closing .stage2{position:relative;width:min(372px,92%);z-index:2}
 .oval{position:relative;width:100%;aspect-ratio:300/430}
 .oval>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.oval .txt{position:absolute;inset:13% 15% 30%;display:grid;align-content:center;justify-items:center;gap:8px;font-size:clamp(.82rem,3.5vw,.95rem);line-height:1.45}
+.oval .txt{position:absolute;inset:17% 19% 29%;display:grid;align-content:center;justify-items:center;gap:8px;font-size:clamp(.76rem,3.3vw,.9rem);line-height:1.4;text-wrap:balance}
 .oval .nm{font-family:var(--f-deco);font-size:clamp(2.5rem,11vw,3.2rem);line-height:.9;margin-top:4px}
 .oval .nm span{display:block;font-size:.7em}
 .oval .thanks{font-family:var(--f-script);font-size:1.4em;line-height:1.2}
@@ -292,6 +292,14 @@ footer{padding:20px 16px 26px;text-align:center;font-size:.8rem;letter-spacing:.
   *,*::before,*::after{animation:none!important;transition:none!important}
   .rv{opacity:1;transform:none;filter:none}
 }
+
+/* ===== Foto asli (lihat aset/foto/KREDIT.md) ===== */
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.03)}
+.ph::before{content:"";position:absolute;inset:0;z-index:1;box-shadow:inset 0 0 0 1px rgba(243,237,226,.25),inset 0 0 40px rgba(0,0,0,.35);pointer-events:none}
+.ph::after{z-index:2}
+.p1 .photo{background:radial-gradient(ellipse at 50% 40%,rgba(255,220,200,.12),rgba(0,0,0,.25)),url(aset/foto/kain-ulos.webp) center/cover}
+.p2 .photo{background:radial-gradient(ellipse at 50% 40%,rgba(0,0,0,.05),rgba(0,0,0,.4)),url(aset/foto/kain-batik.webp) center/cover}
+.pframe .photo span,.p2 .photo span{color:var(--cream);text-shadow:0 2px 12px rgba(0,0,0,.7)}
 </style>
 </head>
 <body>
@@ -343,7 +351,7 @@ footer{padding:20px 16px 26px;text-align:center;font-size:.8rem;letter-spacing:.
   <p class="lead rv">Dengan penuh sukacita dan rasa syukur, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada pernikahan kami:</p>
   <div class="couple">
     <div class="person p1 rv rv-l">
-      <div class="pframe"><div class="photo"><span>J</span><small>FOTO</small></div><div data-svg="pframe"></div></div>
+      <div class="pframe"><div class="photo"><span>J</span></div><div data-svg="pframe"></div></div>
       <div>
         <h3>Josua Parulian Simanjuntak</h3>
         <p>Putra kedua dari<br>Bapak Robert Simanjuntak<br>&amp; Ibu Rosmaida br. Sitorus</p>
@@ -352,7 +360,7 @@ footer{padding:20px 16px 26px;text-align:center;font-size:.8rem;letter-spacing:.
     </div>
     <div class="amp rv rv-z">&amp;</div>
     <div class="person p2 r rv rv-r">
-      <div class="pframe"><div class="photo"><span>L</span><small>FOTO</small></div><div data-svg="pframe"></div></div>
+      <div class="pframe"><div class="photo"><span>L</span></div><div data-svg="pframe"></div></div>
       <div>
         <h3>Larasati Ayu Wulandari</h3>
         <p>Putri pertama dari<br>Bapak Hadi Prasetyo<br>&amp; Ibu Sri Rahayu</p>
@@ -365,7 +373,7 @@ footer{padding:20px 16px 26px;text-align:center;font-size:.8rem;letter-spacing:.
 
 <!-- ===== SAVE THE DATE ===== -->
 <section class="suede std" id="tanggal" data-sparks="6">
-  <div class="floral sway" data-floral="bunga-juntai" style="right:-6%;top:-3%;width:38%"></div>
+  <div class="floral sway" data-floral="bunga-juntai" style="right:-10%;top:-3%;width:29%"></div>
   <div class="floral flip sway b" data-floral="bunga-juntai" style="left:-10%;top:-4%;width:28%"></div>
   <div class="big rv">
     <span class="a">Save</span>
@@ -451,14 +459,14 @@ footer{padding:20px 16px 26px;text-align:center;font-size:.8rem;letter-spacing:.
 <section class="velvet" id="galeri" data-sparks="6" style="padding-inline:10px">
   <h2 class="title rv">Gallery</h2>
   <div class="gal a rv">
-    <div class="ph"><span data-cam></span>FOTO 1</div>
-    <div class="ph big"><span data-cam></span>FOTO PREWEDDING</div>
-    <div class="ph"><span data-cam></span>FOTO 3</div>
+    <div class="ph"><img src="aset/foto/galeri-2.webp" alt="Sepasang cincin di telapak tangan" loading="lazy" decoding="async"></div>
+    <div class="ph big"><img src="aset/foto/galeri-6.webp" alt="Kedua mempelai bergandengan tangan" loading="lazy" decoding="async"></div>
+    <div class="ph"><img src="aset/foto/galeri-4.webp" alt="Roncean melati pengantin" loading="lazy" decoding="async"></div>
   </div>
   <div class="gal b rv">
-    <div class="ph big"><span data-cam></span>FOTO 4</div>
-    <div class="ph"><span data-cam></span>FOTO 5</div>
-    <div class="ph"><span data-cam></span>FOTO 6</div>
+    <div class="ph big"><img src="aset/foto/galeri-5.webp" alt="Kedua mempelai di tangga" loading="lazy" decoding="async"></div>
+    <div class="ph"><img src="aset/foto/galeri-1.webp" alt="Tangan mempelai dengan cincin dan buket" loading="lazy" decoding="async"></div>
+    <div class="ph"><img src="aset/foto/galeri-3.webp" alt="Jari yang saling bertaut" loading="lazy" decoding="async"></div>
   </div>
 </section>
 
@@ -541,8 +549,9 @@ footer{padding:20px 16px 26px;text-align:center;font-size:.8rem;letter-spacing:.
 </section>
 </main>
 <footer>JOSUA &amp; LARASATI · 12.06.2027
-  <details class="credit"><summary>Kredit foto bunga</summary>
+  <details class="credit"><summary>Kredit foto</summary>
     <p>Rangkaian bunga disusun dari foto Wikimedia Commons; hasil susunannya berlisensi <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Foto oleh: Leonora Enking (CC BY-SA 2.0), Balise42 (CC BY-SA 4.0), Tubifex (CC BY-SA 3.0), Yercaud-elango (CC BY-SA 4.0), Nino Barbieri (CC BY-SA 2.5), Nesnad (CC BY 4.0), Kurt Stüber (CC BY-SA 3.0), Bff (CC BY-SA 3.0), Denis Barthel &amp; Aftonlilja (CC BY-SA 3.0), Rabe! &amp; Fmi2012 (CC BY-SA 3.0), B.navez (CC BY-SA 3.0), Lubna (CC BY-SA 3.0), Amada44 (CC BY 3.0). Rincian: <a href="aset/bunga/KREDIT.md" target="_blank" rel="noopener">KREDIT.md</a>.</p>
+    <p>Foto galeri &amp; kain: Drew Coffman, Petr Ovralov, Paul García, Anne Edgar, Wu Jianxiong (Unsplash, CC0); Astari28 (CC BY 4.0); Rijksmuseum &amp; Honolulu Museum of Art (CC0). Rincian: <a href="aset/foto/KREDIT.md" target="_blank" rel="noopener">KREDIT.md</a>.</p>
   </details>
 </footer>
 </div>
