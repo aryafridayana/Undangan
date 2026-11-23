@@ -1,25 +1,23 @@
 # Kredit foto bunga
 
-Gambar `bunga-besar.webp`, `bunga-kecil.webp`, `bunga-juntai.webp`, dan `bunga-lantai.webp` adalah rangkaian yang disusun dari foto-foto di bawah ini (latar dihapus, warna sedikit disesuaikan, lalu digabung). Hasil susunan ini dibagikan dengan lisensi [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+`pita.webp`, `sudut.webp`, `gugus.webp`, `juntai.webp`, dan kuntum `k-*.webp` disusun dari foto Wikimedia Commons di bawah ini. Hasil susunan dibagikan dengan lisensi [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 | Foto | Pembuat | Lisensi |
 |---|---|---|
-| [String of Beads (Senecio rowleyanus)](https://commons.wikimedia.org/wiki/File:String_of_Beads_(Senecio_rowleyanus)_(3424158397).jpg) | Leonora Enking | CC BY-SA 2.0 |
-| [Foxtail amaranth falling from a picket fence](https://commons.wikimedia.org/wiki/File:Foxtail_amaranth_falling_from_a_picket_fence.jpg) | Balise42 | CC BY-SA 4.0 |
-| [Amaranthus caudatus (Zieramaranth)](https://commons.wikimedia.org/wiki/File:3836_-_Amaranthus_caudatus_(Zieramaranth).JPG) | Tubifex | CC BY-SA 3.0 |
-| [Hypericum berries](https://commons.wikimedia.org/wiki/File:Hypericum_berries_-_red_-_March_3_2021.jpeg) | Nesnad | CC BY 4.0 |
-| [Rose20090913 36](https://commons.wikimedia.org/wiki/File:Rose20090913_36.png) | Bff | CC BY-SA 3.0 |
-| [Pear leaf](https://commons.wikimedia.org/wiki/File:Pear_LeafTransparent.png) | Rabe!, Fmi2012 | CC BY-SA 3.0 |
-| [Litchi chinensis leaf](https://commons.wikimedia.org/wiki/File:Litchi_chinensis_leaf.png) | B.navez | CC BY-SA 3.0 |
-| [Zantedeschia aethiopica](https://commons.wikimedia.org/wiki/File:Zantedeschia_aethiopica_002.png) | Amada44 | CC BY 3.0 |
-| [Blanche Rose on black background](https://commons.wikimedia.org/wiki/File:Blanche_Rose_on_black_background.jpg) | Filo gèn' | CC BY-SA 4.0 |
-| [Rose in the dark](https://commons.wikimedia.org/wiki/File:Rose_in_the_dark.jpg) | SzinNapalm | CC BY 4.0 |
-| [White Peony Blossom](https://commons.wikimedia.org/wiki/File:White_Peony_Blossom.jpg) | ChickenFreak | Domain publik |
-| [White peony flower](https://commons.wikimedia.org/wiki/File:White_peony_flower.jpg) | Dusan Bicanski | Domain publik |
-| [White Lisianthus flower](https://commons.wikimedia.org/wiki/File:White_Lisianthus_flower.jpg) | Downtowngal | CC BY-SA 4.0 |
-| [Extracted pink rose](https://commons.wikimedia.org/wiki/File:Extracted_pink_rose.png) | Kurt Stüber | CC BY-SA 3.0 |
-| [Rosa Red Chateau on black background](https://commons.wikimedia.org/wiki/File:Rosa_Red_Chateau_on_black_background.jpg) | Filo gèn' | CC BY-SA 4.0 |
-| [Rose Papa Meilland on black background](https://commons.wikimedia.org/wiki/File:Rose_Papa_Meilland_on_black_background.jpg) | Filo gèn' | CC BY-SA 4.0 |
-| [Red rose with black background](https://commons.wikimedia.org/wiki/File:Red_rose_with_black_background.jpg) | Laitche | CC BY-SA 4.0 |
+| [White Orchid2.jpg](https://commons.wikimedia.org/wiki/File:White_Orchid2.jpg) | Mustang Joe | CC0 |
+| [Dalia3.jpg](https://commons.wikimedia.org/wiki/File:Dalia3.jpg) | Nino Barbieri | CC BY 2.5 |
+| [Fern-leaf-oliv.jpg](https://commons.wikimedia.org/wiki/File:Fern-leaf-oliv.jpg) | Olegivvit | CC BY 2.5 |
+| [White hydrangea in Zürich.jpg](https://commons.wikimedia.org/wiki/File:White_hydrangea_in_Zürich.jpg) | Balise42 | CC BY 4.0 |
+| [Rose on black background.jpg](https://commons.wikimedia.org/wiki/File:Rose_on_black_background.jpg) | Filo gèn' | CC BY-SA 4.0 |
+| [Rosa Red Chateau on black background.jpg](https://commons.wikimedia.org/wiki/File:Rosa_Red_Chateau_on_black_background.jpg) | Filo gèn' | CC BY-SA 4.0 |
+| [Blanche Rose on black background.jpg](https://commons.wikimedia.org/wiki/File:Blanche_Rose_on_black_background.jpg) | Filo gèn' | CC BY-SA 4.0 |
+| [Red rose with black background.jpg](https://commons.wikimedia.org/wiki/File:Red_rose_with_black_background.jpg) | Laitche | CC BY-SA 4.0 |
+| [Extracted pink rose.png](https://commons.wikimedia.org/wiki/File:Extracted_pink_rose.png) | Kurt Stüber | CC BY-SA 3.0 |
+| [White Peony Blossom.jpg](https://commons.wikimedia.org/wiki/File:White_Peony_Blossom.jpg) | ChickenFreak | Domain publik |
+| [White peony flower.jpg](https://commons.wikimedia.org/wiki/File:White_peony_flower.jpg) | Dusan Bicanski | Domain publik |
+| [String of Beads (Senecio rowleyanus) (3424158397).jpg](https://commons.wikimedia.org/wiki/File:String_of_Beads_(Senecio_rowleyanus)_(3424158397).jpg) | Leonora Enking | CC BY-SA 2.0 |
+| [3836 - Amaranthus caudatus (Zieramaranth).JPG](https://commons.wikimedia.org/wiki/File:3836_-_Amaranthus_caudatus_(Zieramaranth).JPG) | Tubifex | CC BY-SA 3.0 |
+| [Pear LeafTransparent.png](https://commons.wikimedia.org/wiki/File:Pear_LeafTransparent.png) | Rabe!, Fmi2012 | CC BY-SA 3.0 |
+| [Litchi chinensis leaf.png](https://commons.wikimedia.org/wiki/File:Litchi_chinensis_leaf.png) | B.navez | CC BY-SA 3.0 |
 
-Perubahan: latar foto dihapus; mawar merah digelapkan ke burgundi, mawar pink diredam ke dusty rose, kecerahan mawar krem dinaikkan, bayam ekor kucing digeser ke burgundi, buah hypericum digelapkan ke maroon; lalu semuanya disusun menjadi rangkaian dengan palet moodboard (maroon, burgundi, ivory, dusty rose, hijau).
+Perubahan: latar dihapus, warna sebagian bunga diubah (dahlia dan mawar ke dusty rose/anggur, mawar merah ke burgundi, daun digelapkan), lalu digabung menjadi rangkaian.

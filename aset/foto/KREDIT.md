@@ -13,5 +13,7 @@ Semua foto dari Wikimedia Commons, dipotong dan dikompres ke WebP.
 | kain-ulos.webp | [Doek Ulos godang, AK-MAK-1742-86.jpg](https://commons.wikimedia.org/wiki/File:Doek_Ulos_godang,_AK-MAK-1742-86.jpg) | Rijksmuseum | CC0 |
 | kain-batik.webp | [Kain kapala (headcloth) from Java, c. 1929, Honolulu Museum of Art.jpg](https://commons.wikimedia.org/wiki/File:Kain_kapala_(headcloth)_from_Java,_c._1929,_Honolulu_Museum_of_Art.jpg) | Honolulu Museum of Art (Hiart) | CC0 |
 | kado.webp | [Gift box I.jpg](https://commons.wikimedia.org/wiki/File:Gift_box_I.jpg) | Milad Mosapoor | Atribusi (wajib mencantumkan nama pembuat) |
+| rumah-bolon.webp | [Rumah Bolon (Batak Traditional House).jpg](https://commons.wikimedia.org/wiki/File:Rumah_Bolon_(Batak_Traditional_House).jpg) | Roberto Marpaung | CC BY-SA 4.0, diwarnai ulang |
+| rumah-joglo.webp | [Rumah Joglo Puri Wedari.jpg](https://commons.wikimedia.org/wiki/File:Rumah_Joglo_Puri_Wedari.jpg) | Herusutimbul | CC BY-SA 4.0, diwarnai ulang |
 
 Foto galeri adalah contoh. Ganti dengan foto prewedding asli sebelum undangan disebar.
