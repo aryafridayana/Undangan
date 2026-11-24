@@ -368,9 +368,6 @@ button.pframe,button.ph,button.gift-ico{border:0;padding:0;background:none;color
 .pg-bulbs svg{width:100%;height:100%;overflow:visible}
 .pg-bulbs circle{animation:bulb 2.4s ease-in-out infinite}
 @keyframes bulb{0%,100%{opacity:.35}50%{opacity:1}}
-.pg-house{bottom:13svh;height:auto;max-width:none;transform-origin:50% 100%;filter:drop-shadow(0 12px 20px rgba(20,4,10,.6))}
-.pg-house.bolon{left:-9%;width:56%;transform:translate(calc((1 - var(--c)) * -18%),calc((1 - var(--c)) * 14%)) scale(calc(.92 + var(--z) * .1))}
-.pg-house.joglo{right:-13%;width:70%;transform:translate(calc((1 - var(--c)) * 18%),calc((1 - var(--c)) * 14%)) scale(calc(.92 + var(--z) * .1))}
 .pg-txt{left:8px;right:8px;top:19svh;text-align:center;z-index:3;opacity:calc((var(--c) - .45) * 2.4);transform:translateY(calc((1 - var(--c)) * 30px)) scale(calc(.94 + var(--z) * .06));text-shadow:0 2px 16px rgba(20,4,14,.8)}
 .pg-small{font-style:italic;font-size:1.12rem;letter-spacing:.04em}
 .pg-txt h2{font-family:var(--f-deco);font-size:clamp(3.3rem,15.5vw,4.6rem);line-height:1.06;text-shadow:none;filter:drop-shadow(0 2px 8px rgba(20,4,14,.7));animation:foil 7s linear infinite}
@@ -520,9 +517,6 @@ button.gift-ico{display:block;position:relative;width:clamp(150px,44vw,190px);ma
 /* --- perapian --- */
 .pg-txt{top:15svh}
 .pg-txt h2{font-size:min(19vw,5.6rem,11svh);line-height:.95;padding:.16em .4em .2em;margin:0}
-.pg-house{bottom:15svh}
-.pg-house.bolon{left:4%;width:min(54%,36svh)}
-.pg-house.joglo{right:1%;width:min(66%,44svh);z-index:1}
 .pg-cur.l{transform:scaleX(calc(1 - var(--c) * .91)) skewX(calc(var(--c) * 1.5deg))}
 .pg-cur.r{transform:scaleX(calc(1 - var(--c) * .91)) skewX(calc(var(--c) * -1.5deg))}
 .pg-front{width:min(112%,56svh);bottom:-2svh}
@@ -562,6 +556,16 @@ a.maps.rv:hover,.send:hover{background:var(--foil) 100% 0/200% 100%}
 .dots i{box-shadow:0 0 0 2px rgba(243,237,226,.75),0 4px 10px rgba(0,0,0,.25)}
 .mus{background:#4a1420}
 .kartu{box-shadow:0 0 0 2px #c9a96a,0 0 0 8px #4a1420,0 0 0 10px #c9a96a,0 34px 50px -20px rgba(20,2,8,.8)}
+/* rumah adat di panggung */
+.pg-house{left:50%;bottom:7svh;height:52svh;width:auto;max-width:none;transform-origin:50% 100%;transform:translateX(-50%) translateY(calc((1 - var(--c)) * 16%)) scale(calc(.9 + var(--c) * .04 + var(--z) * .06));filter:drop-shadow(0 0 26px rgba(255,196,120,.35)) drop-shadow(0 12px 20px rgba(20,4,10,.6))}
+.pg-moon{left:50%;top:43svh;width:24svh;height:24svh;margin-left:-12svh;opacity:.9}
+.pg-txt{top:13.5svh}
+.pg-txt h2{font-size:min(18vw,5.4rem,10.2svh)}
+.ev-ic.rmh{width:92px;margin-bottom:6px}
+.pg-bulbs{height:24%}
+.pg-txt{top:14.5svh}
+.pg-house{height:50svh}.pg-moon{top:45svh}
+@media (max-height:720px){.pg-txt{top:14svh;line-height:1.35}.pg-txt h2{font-size:8.2svh}.pg-small{font-size:1rem}.pg-date{font-size:.82rem}.pg-house{height:47svh}.pg-moon{top:47.5svh;width:22svh;height:22svh;margin-left:-11svh}}
 @media (prefers-reduced-motion:reduce){
   .panggung{height:100svh;--c:1!important;--z:1!important}.pg-hint{display:none}
   .pita-seam img{opacity:1;transform:translateY(-50%)}.tilt.in{transform:none}.isi .acct,.isi .addr-box{opacity:1;transform:none}#petals,#pal{display:none}
@@ -618,10 +622,9 @@ a.maps.rv:hover,.send:hover{background:var(--foil) 100% 0/200% 100%}
     <div class="pg-sky" aria-hidden="true"></div>
     <i class="pg-moon" aria-hidden="true"></i>
     <div class="pg-bulbs" id="bulbs" aria-hidden="true"></div>
-    <img class="pg-house bolon" src="aset/foto/rumah-bolon.webp" alt="Rumah Bolon, rumah adat Batak Toba">
-    <img class="pg-house joglo" src="aset/foto/rumah-joglo.webp" alt="Rumah Joglo, rumah adat Jawa">
+    <img class="pg-house" src="aset/foto/rumah-adat.webp" alt="Rumah adat Batak dengan ukiran gorga dan motif gunungan">
     <div class="pg-txt">
-      <p class="pg-small">Dua rumah, satu pelaminan</p>
+      <p class="pg-small">Dua adat, satu rumah</p>
       <h2>Josua <span>&amp;</span><br>Larasati</h2>
       <p class="pg-date">Sabtu · 12 Juni 2027</p>
     </div>
@@ -704,7 +707,7 @@ a.maps.rv:hover,.send:hover{background:var(--foil) 100% 0/200% 100%}
   </article>
   <article class="event kartu rv tilt" data-n="2">
     <span class="floral ka" data-floral="sudut"></span><span class="floral kb" data-floral="gugus"></span>
-    <span class="ev-ic"><img src="aset/foto/rumah-bolon.webp" alt="" loading="lazy"></span>
+    <span class="ev-ic rmh"><img src="aset/foto/rumah-adat.webp" alt="" loading="lazy"></span>
     <h2>Ulaon Unjuk</h2>
     <p class="when">Sabtu, 12 Juni 2027</p>
     <p class="time">11.00 – 15.00 WIB</p>
@@ -715,7 +718,7 @@ a.maps.rv:hover,.send:hover{background:var(--foil) 100% 0/200% 100%}
   </article>
   <article class="event kartu rv tilt" data-n="3">
     <span class="floral ka" data-floral="sudut"></span><span class="floral kb" data-floral="gugus"></span>
-    <span class="ev-ic"><img src="aset/foto/rumah-joglo.webp" alt="" loading="lazy"></span>
+    <span class="ev-ic rmh"><img src="aset/foto/rumah-adat.webp" alt="" loading="lazy"></span>
     <h2>Resepsi</h2>
     <p class="when">Sabtu, 12 Juni 2027</p>
     <p class="time">18.30 – 21.00 WIB</p>
@@ -855,7 +858,7 @@ a.maps.rv:hover,.send:hover{background:var(--foil) 100% 0/200% 100%}
 <footer>JOSUA &amp; LARASATI · 12.06.2027
   <details class="credit"><summary>Kredit foto</summary>
     <p>Rangkaian bunga disusun dari foto Wikimedia Commons (dipotong, diwarnai ulang, digabung); hasil susunannya berlisensi <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Foto oleh: Mustang Joe (CC0), Nino Barbieri (CC BY 2.5), Olegivvit (CC BY 2.5), Balise42 (CC BY 4.0), Filo gèn' (CC BY-SA 4.0), Laitche (CC BY-SA 4.0), Kurt Stüber (CC BY-SA 3.0), Leonora Enking (CC BY-SA 2.0), Tubifex (CC BY-SA 3.0), Rabe! &amp; Fmi2012 (CC BY-SA 3.0), B.navez (CC BY-SA 3.0), ChickenFreak &amp; Dusan Bicanski (domain publik). Rincian: <a href="aset/bunga/KREDIT.md" target="_blank" rel="noopener">KREDIT.md</a>.</p>
-    <p>Rumah Bolon: Roberto Marpaung; Rumah Joglo: Herusutimbul (Wikimedia Commons, CC BY-SA 4.0; dipotong dan diwarnai ulang, hasilnya CC BY-SA 4.0).</p>
+    <p>Gambar rumah adat: dari pemilik undangan.</p>
     <p>Foto kado: Milad Mosapoor (Wikimedia Commons, atribusi). Foto galeri &amp; kain: Drew Coffman, Petr Ovralov, Paul García, Anne Edgar, Wu Jianxiong (Unsplash, CC0); Astari28 (CC BY 4.0); Rijksmuseum &amp; Honolulu Museum of Art (CC0). Rincian: <a href="aset/foto/KREDIT.md" target="_blank" rel="noopener">KREDIT.md</a>.</p>
   </details>
 </footer>
