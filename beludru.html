@@ -358,12 +358,9 @@ button.pframe,button.ph,button.gift-ico{border:0;padding:0;background:none;color
 
 /* --- panggung --- */
 .panggung{height:250vh;height:250svh;padding:0;overflow:visible;--c:0;--z:0}
-.pg-in{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#2a0e1e}
+.pg-in{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#4a1410}
 .pg-in>*{position:absolute}
-.pg-sky{inset:0;background:radial-gradient(120% 60% at 50% 78%,#f0b26b 0,#c9684c 24%,#80304a 48%,transparent 76%),linear-gradient(180deg,#12091f 0,#2d1030 40%,#5b1d37 100%)}
-.pg-sky::after{content:"";position:absolute;inset:0 0 45%;background-image:radial-gradient(1px 1px at 20% 30%,#fff,transparent),radial-gradient(1px 1px at 70% 20%,#ffe9c0,transparent),radial-gradient(1.5px 1.5px at 45% 60%,#fff,transparent),radial-gradient(1px 1px at 85% 70%,#fff,transparent),radial-gradient(1px 1px at 10% 80%,#ffe9c0,transparent);background-size:130px 110px;animation:twinkle2 4s ease-in-out infinite alternate}
 @keyframes twinkle2{from{opacity:.35}to{opacity:.95}}
-.pg-moon{left:50%;margin-left:-27px;top:56%;width:54px;height:54px;border-radius:50%;background:radial-gradient(circle at 40% 38%,#fff6dd,#f0d9a2);box-shadow:0 0 50px 14px rgba(255,226,160,.4);translate:0 calc(var(--z) * -24px)}
 .pg-bulbs{left:0;right:0;top:0;height:30%;z-index:2}
 .pg-bulbs svg{width:100%;height:100%;overflow:visible}
 .pg-bulbs circle{animation:bulb 2.4s ease-in-out infinite}
@@ -520,7 +517,6 @@ button.gift-ico{display:block;position:relative;width:clamp(150px,44vw,190px);ma
 .pg-cur.l{transform:scaleX(calc(1 - var(--c) * .91)) skewX(calc(var(--c) * 1.5deg))}
 .pg-cur.r{transform:scaleX(calc(1 - var(--c) * .91)) skewX(calc(var(--c) * -1.5deg))}
 .pg-front{width:min(112%,56svh);bottom:-2svh}
-.pg-sky{background:radial-gradient(130% 55% at 50% 74%,#f3bd78 0,#cf6f50 22%,#843350 46%,transparent 74%),linear-gradient(180deg,#12091f 0,#2d1030 36%,#5b1d37 100%)}
 .cover.s4 .env .fl1{transform:translate(-2%,34%) scale(.68);transform-origin:0 50%;animation:none}
 .env .fl1{transition:transform 1.3s var(--ease)}
 .person{gap:14px}
@@ -565,6 +561,21 @@ a.maps.rv:hover,.send:hover{background:var(--foil) 100% 0/200% 100%}
 .pg-bulbs{height:24%}
 .pg-txt{top:14.5svh}
 .pg-house{height:50svh}.pg-moon{top:45svh}
+/* langit sunset */
+.pg-sky{inset:0;background:
+  radial-gradient(70% 34% at 50% 60%,rgba(255,236,170,.95) 0,rgba(255,196,96,.6) 38%,rgba(255,160,70,0) 100%),
+  linear-gradient(180deg,#5c1510 0,#7e1f14 16%,#a8321a 30%,#d2541f 43%,#ee7f2c 54%,#fba947 64%,#ffd07a 73%,#f7b25c 80%,#c9602f 90%,#7c2420 100%)}
+.pg-sky::before,.pg-sky::after{content:"";position:absolute;inset:0 -30%;background-repeat:no-repeat}
+.pg-sky::before{background-image:
+  radial-gradient(48% 2.2% at 30% 50%,rgba(255,226,160,.6),transparent),radial-gradient(40% 1.6% at 68% 55%,rgba(255,214,140,.65),transparent),
+  radial-gradient(34% 1.5% at 22% 62%,rgba(255,240,196,.7),transparent),radial-gradient(44% 2% at 78% 44%,rgba(255,168,90,.5),transparent),
+  radial-gradient(50% 2.6% at 46% 38%,rgba(196,58,30,.5),transparent),radial-gradient(36% 1.6% at 72% 66%,rgba(255,240,200,.6),transparent);animation:awan 26s ease-in-out infinite alternate}
+.pg-sky::after{background-image:radial-gradient(60% 3% at 62% 33%,rgba(120,26,16,.45),transparent),radial-gradient(46% 2% at 28% 43%,rgba(224,92,36,.55),transparent),radial-gradient(40% 1.8% at 56% 48%,rgba(255,190,110,.45),transparent);animation:awan 34s ease-in-out infinite alternate-reverse}
+@keyframes awan{from{transform:translateX(-5%)}to{transform:translateX(5%)}}
+.pg-moon{left:50%;top:45svh;width:24svh;height:24svh;margin-left:-12svh;opacity:1;border-radius:50%;translate:0 calc(var(--z) * 14px);background:radial-gradient(circle at 50% 42%,#fffbe2 0,#ffeaa2 42%,#ffca5c 78%,#ffb442 100%);box-shadow:0 0 60px 22px rgba(255,214,120,.65),0 0 140px 60px rgba(255,160,60,.4)}
+.pg-txt{text-shadow:0 1px 10px rgba(70,12,6,.9)}
+.pg-txt h2{--foil:linear-gradient(100deg,#f3cf7c 0,#fff6d6 24%,#f6d88d 44%,#fffbe8 58%,#efc871 78%,#fff0c2 100%);filter:drop-shadow(0 2px 5px rgba(70,12,6,.95))}
+.pg-in::after{background:linear-gradient(180deg,rgba(107,31,45,0),rgba(98,28,36,.85) 42%,#6B1F2D)}
 @media (max-height:720px){.pg-txt{top:14svh;line-height:1.35}.pg-txt h2{font-size:8.2svh}.pg-small{font-size:1rem}.pg-date{font-size:.82rem}.pg-house{height:47svh}.pg-moon{top:47.5svh;width:22svh;height:22svh;margin-left:-11svh}}
 @media (prefers-reduced-motion:reduce){
   .panggung{height:100svh;--c:1!important;--z:1!important}.pg-hint{display:none}
