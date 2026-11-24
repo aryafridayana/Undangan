@@ -574,6 +574,14 @@ a.maps.rv:hover,.send:hover{background:var(--foil) 100% 0/200% 100%}
 .pg-txt h2{--foil:linear-gradient(100deg,#f3cf7c 0,#fff6d6 24%,#f6d88d 44%,#fffbe8 58%,#efc871 78%,#fff0c2 100%);filter:drop-shadow(0 2px 5px rgba(70,12,6,.95))}
 .pg-in::after{background:linear-gradient(180deg,rgba(107,31,45,0),rgba(98,28,36,.85) 42%,#6B1F2D)}
 @media (max-height:720px){.pg-txt{top:14svh;line-height:1.35}.pg-txt h2{font-size:8.2svh}.pg-small{font-size:1rem}.pg-date{font-size:.82rem}.pg-house{height:47svh}.pg-moon{top:47.5svh;width:22svh;height:22svh;margin-left:-11svh}}
+/* sambungan antarbagian menyatu, tanpa patahan */
+.seam,.seam-b{display:none!important}
+main>section+section{border-top:0!important}
+.closing::before{display:none}
+.closing::after{content:"";position:absolute;inset:0 0 auto;height:360px;background:var(--grain-l),linear-gradient(90deg,rgba(40,6,14,.26),rgba(40,6,14,0) 24%,rgba(40,6,14,0) 76%,rgba(40,6,14,.26)),#6B1F2D;pointer-events:none;z-index:0;-webkit-mask-image:linear-gradient(#000 22%,transparent);mask-image:linear-gradient(#000 22%,transparent)}
+.pg-cur{-webkit-mask-image:linear-gradient(#000 80%,transparent 93%);mask-image:linear-gradient(#000 80%,transparent 93%)}
+.pg-in::after{height:26svh;background:var(--grain-l),linear-gradient(90deg,rgba(40,6,14,.26),rgba(40,6,14,0) 24%,rgba(40,6,14,0) 76%,rgba(40,6,14,.26)),linear-gradient(#6B1F2D,#6B1F2D);-webkit-mask-image:linear-gradient(transparent,#000 62%);mask-image:linear-gradient(transparent,#000 62%)}
+.pg-front{bottom:.5svh;z-index:7}
 @media (prefers-reduced-motion:reduce){
   .panggung{height:100svh;--c:1!important;--z:1!important}.pg-hint{display:none}
   .pita-seam img{opacity:1;transform:translateY(-50%)}.tilt.in{transform:none}.isi .acct,.isi .addr-box{opacity:1;transform:none}#petals,#pal{display:none}
