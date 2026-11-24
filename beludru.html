@@ -415,16 +415,13 @@ main{--pt:calc(min(100vw,480px) * .19)}
 .jt{width:25%;top:calc(var(--pt) * .55)!important;z-index:2}
 .jt.l{left:-1%}.jt.r{right:-1%}
 .std{padding-bottom:40px}
-.scratch{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:340px;margin:18px auto 0}
-.sc{position:relative;aspect-ratio:1;border-radius:50%;display:grid;place-content:center;background:radial-gradient(circle at 50% 35%,#fbf5ea,#e0d0b4);color:#5a0f1b;box-shadow:0 0 0 2px #c9a96a,0 0 0 6px rgba(201,169,106,.25),0 14px 22px -10px #000;overflow:hidden;line-height:1}
-.sc b{font-size:2.3rem;font-weight:700}.sc b.w{font-size:1.65rem}
-.sc small{font-size:.7rem;letter-spacing:.12em;margin-top:5px;text-transform:uppercase}
-.sc canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab;transition:opacity .7s}
-.sc.ok canvas{opacity:0;pointer-events:none}
-.sc.ok{animation:pop .6s var(--ease)}
-@keyframes pop{40%{transform:scale(1.14)}}
-.lnk{margin-top:12px;background:none;border:0;border-bottom:1px solid rgba(243,237,226,.5);color:inherit;font:inherit;font-size:.86rem;letter-spacing:.06em;cursor:pointer;padding:4px 2px}
-.daterow{margin-top:26px}.daterow .day{font-family:var(--f-deco);font-weight:400}
+.tgl{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:318px;margin:22px auto 0}
+.tgl div{aspect-ratio:3/4;border-radius:50%;display:grid;place-content:center;gap:5px;line-height:1;color:#4a1420;background:linear-gradient(150deg,#c99d55 0,#f6e4b0 26%,#dcb469 48%,#fbefc9 68%,#c99a50 100%);box-shadow:inset 0 0 0 5px rgba(255,248,225,.55),inset 0 0 0 6px rgba(120,78,24,.5),0 0 0 2px #c9a96a,0 14px 22px -10px rgba(20,2,8,.8)}
+.tgl small{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.tgl b{font-size:2.5rem;font-weight:700;font-variant-numeric:lining-nums}.tgl b.w{font-size:1.7rem}
+.daterow{margin-top:26px;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)}
+@media (max-width:360px){.daterow{gap:8px}.daterow .side .script{font-size:1.5rem}.daterow .side span:last-child{font-size:.84rem;white-space:nowrap}.daterow .day{font-size:2.5rem}}
+.daterow .day{font-family:var(--f-deco);font-weight:400}
 .count div{position:relative;overflow:hidden}
 .count b.fl{animation:numflip .5s var(--ease)}
 @keyframes numflip{from{transform:translateY(-70%) rotateX(60deg);opacity:0}}
@@ -683,13 +680,11 @@ a.maps.rv:hover,.send:hover{background:var(--foil) 100% 0/200% 100%}
     <span class="c">Date</span>
     <div class="butterfly" data-svg="butterfly"></div>
   </div>
-  <p class="lead rv" id="scrTip">Gosok lingkaran emas untuk membuka tanggalnya</p>
-  <div class="scratch rv" id="scratch" role="group" aria-label="Sabtu, 12 Juni 2027">
-    <div class="sc"><b>12</b><small>Sabtu</small><canvas></canvas></div>
-    <div class="sc"><b class="w">Juni</b><small>Bulan</small><canvas></canvas></div>
-    <div class="sc"><b class="w">2027</b><small>Tahun</small><canvas></canvas></div>
+  <div class="tgl" role="group" aria-label="Sabtu, 12 Juni 2027">
+    <div><small>Sabtu</small><b>12</b></div>
+    <div><small>Bulan</small><b class="w">Juni</b></div>
+    <div><small>Tahun</small><b class="w">2027</b></div>
   </div>
-  <button class="lnk" id="scrAll" type="button">Buka semua</button>
   <div class="daterow rv">
     <div class="side"><span class="script">Pernikahan</span><span>Pukul 08.00 WIB</span></div>
     <span class="day" aria-hidden="true">&amp;</span>
@@ -1255,26 +1250,6 @@ a.maps.rv:hover,.send:hover{background:var(--foil) 100% 0/200% 100%}
 
   /* ---------- Bingkai mempelai berbalik ---------- */
   $$(".pframe").forEach(function(b){ b.addEventListener("click", function(){ b.classList.toggle("on"); }); });
-
-  /* ---------- Gosok emas ---------- */
-  var left3 = 3, scs = $$(".sc");
-  function reveal(sc, quiet){ if (sc.classList.contains("ok")) return; sc.classList.add("ok"); left3--; var m = mid(sc); if (!quiet) burst(m[0],m[1],8);
-    if (!left3){ $("#scrAll").hidden = true; $("#scrTip").textContent = "Sabtu, 12 Juni 2027. Sampai jumpa di hari bahagia kami!"; m = mid($("#scratch")); setTimeout(function(){ burst(m[0],m[1],24); },250); } }
-  scs.forEach(function(sc){
-    var c = $("canvas",sc), g = c.getContext("2d"), N = 160, down = false, n = 0; c.width = c.height = N;
-    var gr = g.createLinearGradient(0,0,N,N); [["0","#a87b37"],[".25","#f3dfa6"],[".5","#bb8d45"],[".75","#fbeec5"],["1","#a67935"]].forEach(function(s){ gr.addColorStop(+s[0],s[1]); });
-    g.fillStyle = gr; g.fillRect(0,0,N,N);
-    for (var k=0;k<500;k++){ g.fillStyle = "rgba(255,255,255,"+Math.random()*.3+")"; g.fillRect(Math.random()*N,Math.random()*N,1.4,1.4); }
-    g.strokeStyle = "rgba(90,50,10,.45)"; g.lineWidth = 2; g.beginPath(); g.moveTo(80,112); g.bezierCurveTo(30,80,52,44,80,66); g.bezierCurveTo(108,44,130,80,80,112); g.stroke();
-    g.globalCompositeOperation = "destination-out"; g.lineCap = "round"; g.lineWidth = 36;
-    function pt(e){ var r = c.getBoundingClientRect(); return [(e.clientX-r.left)*N/r.width,(e.clientY-r.top)*N/r.height]; }
-    var last;
-    c.addEventListener("pointerdown", function(e){ down = true; try{ c.setPointerCapture(e.pointerId); }catch(x){} last = pt(e); });
-    c.addEventListener("pointermove", function(e){ if (!down) return; var p = pt(e); g.beginPath(); g.moveTo(last[0],last[1]); g.lineTo(p[0],p[1]); g.stroke(); last = p;
-      if (++n%8===0){ var d = g.getImageData(0,0,N,N).data, z=0; for (var i=3;i<d.length;i+=64) if (d[i]<60) z++; if (z/(d.length/64)>.45) reveal(sc); } });
-    ["pointerup","pointercancel"].forEach(function(x){ c.addEventListener(x,function(){ down = false; }); });
-  });
-  $("#scrAll").addEventListener("click", function(){ scs.forEach(function(s,i){ setTimeout(function(){ reveal(s); }, reduce?0:i*220); }); });
 
   /* ---------- Angka hitung mundur bergerak ---------- */
   ["cd-m","cd-s","cd-h"].forEach(function(id){ var el = document.getElementById(id); var old = el.textContent; new MutationObserver(function(){ if (el.textContent===old) return; old = el.textContent; el.classList.remove("fl"); void el.offsetWidth; el.classList.add("fl"); }).observe(el,{childList:true}); });
