@@ -209,7 +209,6 @@ html.locked,html.locked body{overflow:hidden;height:100%;overscroll-behavior:non
 /* ===== GALERI ===== */
 .gal{display:grid;gap:6px;margin-top:6px}
 .gal.a{grid-template-columns:1fr 2fr}
-.gal.b{grid-template-columns:2fr 1fr;margin-top:6px}
 .ph{position:relative;display:grid;place-items:center;align-content:center;gap:6px;min-height:150px;font-size:.62rem;letter-spacing:.22em;color:rgba(255,255,255,.85);overflow:hidden;box-shadow:0 6px 14px -8px #000}
 .ph svg{width:26px;height:26px;opacity:.8}
 .ph.big{grid-row:span 2;min-height:310px}
@@ -727,6 +726,22 @@ body{background:none}
 @keyframes slin{from{opacity:.5;transform:translateX(var(--dx,30px))}}
 @keyframes kartuKeluar{from{transform:translateY(-24px) scale(.95)}to{transform:none}}
 @media (hover:none){.ph:hover img{transform:none}}
+/* --- galeri: tiga foto sejajar (geser) --- */
+.kar{position:relative;margin:10px -10px 0}
+.kar.rv,.kar.rv.in{opacity:1}
+.rel{display:flex;gap:10px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:6px 20% 16px;position:relative}
+.rel::-webkit-scrollbar{display:none}
+.rel .ph{flex:0 0 100%;width:100%;min-height:0;aspect-ratio:3/4;scroll-snap-align:center;scroll-snap-stop:always;transform:scale(.9);transition:transform .45s var(--ease);touch-action:pan-x pan-y;-webkit-user-select:none;user-select:none}
+.rel .ph.di{transform:none}
+.rel.seret{scroll-snap-type:none;cursor:grabbing}
+.rel img{-webkit-user-drag:none;pointer-events:none}
+.kn{position:absolute;top:calc(50% - 34px);width:40px;height:40px;padding:0 0 4px;border:1px solid #f0d694;border-radius:50%;background:#4a1420;color:#f6e3ae;font:400 1.7rem/1 var(--f-serif);cursor:pointer;transition:opacity .3s;z-index:2}
+.kn.pr{left:12px}.kn.nx{right:12px}.kn:disabled{opacity:.35;cursor:default}
+.ttk{display:flex;justify-content:center}
+.ttk button{width:26px;height:26px;padding:0;border:0;background:none;cursor:pointer;display:grid;place-items:center}
+.ttk button::before{content:"";width:8px;height:8px;border-radius:4px;background:rgba(243,237,226,.4);transition:width .3s,background .3s}
+.ttk button.di::before{width:22px;background:#f0d694}
+@media (hover:none){.kn{display:none}}
 @media (prefers-reduced-motion:reduce){
   .panggung{height:100svh;--c:1!important;--z:1!important}.pg-hint{display:none}
   .pita-seam img{opacity:1;transform:translateY(-50%)}.tilt.in{transform:none}.isi .acct,.isi .addr-box{opacity:1;transform:none}#petals,#pal{display:none}
@@ -903,12 +918,17 @@ body{background:none}
     <button class="ph big" type="button"><img src="aset/foto/galeri-6.webp" alt="Kedua mempelai bergandengan tangan" loading="lazy" decoding="async"></button>
     <button class="ph" type="button"><img src="aset/foto/galeri-4.webp" alt="Roncean melati pengantin" loading="lazy" decoding="async"></button>
   </div>
-  <div class="gal b rv">
-    <button class="ph big" type="button"><img src="aset/foto/galeri-5.webp" alt="Kedua mempelai di tangga" loading="lazy" decoding="async"></button>
-    <button class="ph" type="button"><img src="aset/foto/galeri-1.webp" alt="Tangan mempelai dengan cincin dan buket" loading="lazy" decoding="async"></button>
-    <button class="ph" type="button"><img src="aset/foto/galeri-3.webp" alt="Jari yang saling bertaut" loading="lazy" decoding="async"></button>
+  <div class="kar rv" id="kar">
+    <div class="rel" role="group" aria-label="Foto yang bisa digeser">
+      <button class="ph" type="button"><img src="aset/foto/galeri-5.webp" alt="Kedua mempelai di tangga" loading="lazy" decoding="async"></button>
+      <button class="ph" type="button"><img src="aset/foto/galeri-1.webp" alt="Tangan mempelai dengan cincin dan buket" loading="lazy" decoding="async"></button>
+      <button class="ph" type="button"><img src="aset/foto/galeri-3.webp" alt="Jari yang saling bertaut" loading="lazy" decoding="async"></button>
+    </div>
+    <button class="kn pr" type="button" aria-label="Foto sebelumnya">&#8249;</button>
+    <button class="kn nx" type="button" aria-label="Foto berikutnya">&#8250;</button>
+    <div class="ttk"></div>
   </div>
-  <p class="tip rv">Ketuk foto, lalu geser</p>
+  <p class="tip rv">Geser foto, ketuk untuk memperbesar</p>
 </section>
 
 <!-- ===== HADIAH ===== -->
@@ -1341,7 +1361,7 @@ body{background:none}
   if (!reduce){ for (var i=0;i<9;i++) P.push(petal()); start(); }
   function mid(el){ var r = el.getBoundingClientRect(); return [r.left+r.width/2, r.top+r.height/2]; }
   /* ketuk di mana saja = taburan kecil */
-  document.addEventListener("click", function(e){ if (!e.target.closest("input,textarea,select,label,canvas,a,.pframe,.ph,.lb,.mus,summary")) burst(e.clientX, e.clientY, 3); });
+  document.addEventListener("click", function(e){ if (!e.target.closest("input,textarea,select,label,canvas,a,.pframe,.ph,.kar,.lb,.mus,summary")) burst(e.clientX, e.clientY, 3); });
 
   /* ---------- Amplop dibuka ---------- */
   document.addEventListener("undangan-dibuka", function(){
@@ -1408,6 +1428,31 @@ body{background:none}
 
   /* ---------- Bingkai mempelai berbalik ---------- */
   $$(".pframe").forEach(function(b){ b.addEventListener("click", function(){ b.classList.toggle("on"); }); });
+
+  /* ---------- Tiga foto sejajar yang bisa digeser ---------- */
+  (function(){
+    var k = $("#kar"), rel = $(".rel",k), f = $$(".ph",rel), box = $(".ttk",k), on = -1, sentuh = false, jalan = false;
+    var ttk = f.map(function(_,i){ var b = document.createElement("button"); b.type = "button"; b.setAttribute("aria-label","Foto "+(i+1)+" dari "+f.length); b.onclick = function(){ ke(i); }; box.appendChild(b); return b; });
+    function pos(i){ return f[i].offsetLeft+f[i].offsetWidth/2-rel.clientWidth/2; }
+    function ke(i,langsung){ sentuh = sentuh || !langsung; i = Math.max(0,Math.min(f.length-1,i)); rel.scrollTo({left:pos(i),behavior:langsung||reduce?"auto":"smooth"}); }
+    function cek(){ jalan = false; var m = 0; f.forEach(function(_,i){ if (Math.abs(pos(i)-rel.scrollLeft) < Math.abs(pos(m)-rel.scrollLeft)) m = i; });
+      if (m === on) return; on = m; f.forEach(function(e,i){ e.classList.toggle("di",i===m); ttk[i].classList.toggle("di",i===m); if (i===m) ttk[i].setAttribute("aria-current","true"); else ttk[i].removeAttribute("aria-current"); });
+      $(".pr",k).disabled = m===0; $(".nx",k).disabled = m===f.length-1; }
+    rel.addEventListener("scroll", function(){ if (!jalan){ jalan = true; requestAnimationFrame(cek); } }, {passive:true});
+    rel.addEventListener("touchstart", function(){ sentuh = true; }, {passive:true});
+    $(".pr",k).onclick = function(){ ke(on-1); }; $(".nx",k).onclick = function(){ ke(on+1); };
+    /* seret dengan tetikus di laptop */
+    var sx = null, sl = 0, geser = false;
+    rel.addEventListener("pointerdown", function(e){ geser = false; if (e.pointerType !== "mouse" || e.button) return; sx = e.clientX; sl = rel.scrollLeft; });
+    addEventListener("pointermove", function(e){ if (sx === null) return; if (!geser && Math.abs(e.clientX-sx) > 6){ geser = sentuh = true; rel.classList.add("seret"); } if (geser) rel.scrollLeft = sl-(e.clientX-sx); });
+    function lepas(e){ if (sx === null) return; var d = e.clientX-sx; sx = null; if (!geser) return; var i = Math.abs(d) > 40 ? awal+(d<0?1:-1) : awal; ke(i); setTimeout(function(){ rel.classList.remove("seret"); }, 450); }
+    var awal = 0; rel.addEventListener("pointerdown", function(){ awal = on; });
+    addEventListener("pointerup", lepas); addEventListener("pointercancel", lepas);
+    rel.addEventListener("click", function(e){ if (geser){ e.preventDefault(); e.stopPropagation(); geser = false; } }, true);
+    rel.addEventListener("dragstart", function(e){ e.preventDefault(); });
+    function tengah(){ ke(sentuh ? on : 1, true); cek(); }
+    tengah(); addEventListener("load", tengah); addEventListener("resize", tengah);
+  })();
 
   /* ---------- Galeri geser ---------- */
   var lb = $("#lb"), im = $("img",lb), ph = $$("button.ph"), cur = 0, back;
