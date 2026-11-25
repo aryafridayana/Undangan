@@ -205,14 +205,6 @@ html.locked,html.locked body{overflow:hidden;height:100%;overscroll-behavior:non
 .dots i{width:58px;height:58px;border-radius:50%;margin-left:-8px;box-shadow:0 4px 10px rgba(0,0,0,.25)}
 .dots i:first-child{margin-left:0}
 
-/* ===== KISAH ===== */
-.timeline{position:relative;text-align:left;margin-top:8px;padding-left:34px}
-.timeline::before{content:"";position:absolute;left:9px;top:14px;bottom:30px;width:2px;background:rgba(243,237,226,.75)}
-.chapter{position:relative}
-.chapter+.chapter{margin-top:26px}
-.chapter::before{content:"";position:absolute;left:-33px;top:9px;width:20px;height:18px;background:var(--cream);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 18'%3E%3Cpath d='M10 17C3 11 0 8 0 4.6 0 2 2 0 4.6 0 6.8 0 8.6 1.2 10 3.2 11.4 1.2 13.2 0 15.4 0 18 0 20 2 20 4.6 20 8 17 11 10 17Z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 18'%3E%3Cpath d='M10 17C3 11 0 8 0 4.6 0 2 2 0 4.6 0 6.8 0 8.6 1.2 10 3.2 11.4 1.2 13.2 0 15.4 0 18 0 20 2 20 4.6 20 8 17 11 10 17Z'/%3E%3C/svg%3E") center/contain no-repeat}
-.chapter h3{font-family:var(--f-deco);font-size:2.3rem;line-height:1.2}
-.chapter p{font-size:1.02rem;line-height:1.6;text-align:justify;hyphens:auto}
 
 /* ===== GALERI ===== */
 .gal{display:grid;gap:6px;margin-top:6px}
@@ -396,7 +388,7 @@ button.pframe,button.ph,button.gift-ico{border:0;padding:0;background:none;color
 main{--pt:calc(min(100vw,480px) * .19)}
 #mempelai,#galeri{padding-top:calc(var(--pt) + 44px)!important}
 #tanggal,#rsvp{padding-top:calc(var(--pt) + 40px)!important}
-#mempelai,#kisah,#hadiah,#rsvp{padding-bottom:calc(var(--pt) + 44px)}
+#mempelai,#acara,#hadiah,#rsvp{padding-bottom:calc(var(--pt) + 44px)}
 .closing{padding:calc(var(--pt) + 70px) 18px 60px}
 
 /* --- mempelai --- */
@@ -451,18 +443,6 @@ main{--pt:calc(min(100vw,480px) * .19)}
 .dots i{animation:bobdot 3s ease-in-out infinite}.dots i:nth-child(2){animation-delay:-1s}.dots i:nth-child(3){animation-delay:-2s}
 @keyframes bobdot{50%{transform:translateY(-8px)}}
 
-/* --- kisah --- */
-#kisah{padding-top:40px!important}
-.timeline::before{background:rgba(243,237,226,.25)}
-.tl-fill{position:absolute;left:9px;top:14px;bottom:30px;width:2px;background:linear-gradient(#f6e3ae,#c9a96a);transform-origin:0 0;transform:scaleY(var(--g,0));box-shadow:0 0 10px rgba(246,227,174,.8)}
-.chapter::before{transition:background .6s,transform .6s var(--ease)}
-.chapter.lit::before{background:#e0505f;transform:scale(1.35);animation:beat 1.4s ease-in-out infinite}
-@keyframes beat{0%,100%{transform:scale(1.25)}15%{transform:scale(1.5)}30%{transform:scale(1.28)}}
-.pola{margin:0 0 12px;padding:9px 9px 34px;background:#fbf6ec;box-shadow:0 18px 28px -14px #000;transform:rotate(-2.4deg);transition:transform .7s var(--ease);width:88%}
-.chapter:nth-child(odd) .pola{margin-left:auto;transform:rotate(2.2deg)}
-.pola img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
-.pola:hover{transform:rotate(0) scale(1.03)}
-.chapter+.chapter{margin-top:44px}
 
 /* --- galeri --- */
 button.ph{width:100%;overflow:hidden}
@@ -631,7 +611,7 @@ main>section+section{border-top:0!important}
   .pita-seam img{left:9%;width:82%}
   .jt{width:20%}
   #mempelai{padding-inline:22px;padding-top:48px!important}
-  #mempelai,#kisah,#hadiah,#rsvp{padding-bottom:calc(var(--pt) + 34px)}
+  #mempelai,#acara,#hadiah,#rsvp{padding-bottom:calc(var(--pt) + 34px)}
   #galeri{padding-top:calc(var(--pt) + 30px)!important}
   #tanggal,#rsvp{padding-top:calc(var(--pt) + 30px)!important}
   /* judul */
@@ -659,10 +639,6 @@ main>section+section{border-top:0!important}
   .event .venue{font-size:.92rem;letter-spacing:.05em}
   .event .addr,.event .note{max-width:26ch}
   .dress{margin-top:74px}.dots i{width:46px;height:46px}
-  /* kisah */
-  .pola{width:74%;padding:7px 7px 26px}
-  .chapter+.chapter{margin-top:34px}.chapter h3{font-size:2.05rem}
-  .timeline{padding-left:30px}
   /* galeri */
   #galeri .gal{max-width:310px;margin-inline:auto}
   .ph{min-height:112px}.ph.big{min-height:230px}
@@ -742,7 +718,6 @@ body{background:none}
 @keyframes glow{0%,100%{opacity:.62;transform:scale(.98)}50%{opacity:.85;transform:scale(1.02)}}
 .env::after,.gift-ico .glow{animation-duration:5s}
 .ph::after{display:none}
-.chapter.lit::before{animation:none}
 .env .fl1,.env .fl2,.env .fl1 img,.env .fl2 img{animation:none}
 .butterfly svg,#pal svg{animation:kepak .9s ease-in-out infinite alternate}
 @keyframes kepak{to{transform:scaleX(.6)}}
@@ -751,7 +726,7 @@ body{background:none}
 .pframe .face{transition:transform .7s cubic-bezier(.65,0,.35,1),visibility 0s .35s;backface-visibility:visible;-webkit-backface-visibility:visible}
 @keyframes slin{from{opacity:.5;transform:translateX(var(--dx,30px))}}
 @keyframes kartuKeluar{from{transform:translateY(-24px) scale(.95)}to{transform:none}}
-@media (hover:none){.ph:hover img{transform:none}.pola:hover{transform:rotate(-2.4deg)}.chapter:nth-child(odd) .pola:hover{transform:rotate(2.2deg)}}
+@media (hover:none){.ph:hover img{transform:none}}
 @media (prefers-reduced-motion:reduce){
   .panggung{height:100svh;--c:1!important;--z:1!important}.pg-hint{display:none}
   .pita-seam img{opacity:1;transform:translateY(-50%)}.tilt.in{transform:none}.isi .acct,.isi .addr-box{opacity:1;transform:none}#petals,#pal{display:none}
@@ -916,28 +891,6 @@ body{background:none}
     <p>Merah, coklat, dan emas</p>
     <p style="font-size:.98rem;letter-spacing:0;opacity:.85">Ulos, batik, atau kain tradisional sangat kami nantikan.</p>
     <div class="dots" aria-hidden="true"><i style="background:#8e1d1d"></i><i style="background:#7a5640"></i><i style="background:#cfa960"></i></div>
-  </div>
-</section>
-
-<!-- ===== KISAH ===== -->
-<section class="suede" id="kisah" style="padding-top:20px">
-  <h2 class="title rv">Love Story</h2>
-  <div class="timeline" id="tl"><i class="tl-fill"></i>
-    <div class="chapter rv">
-      <figure class="pola"><img src="aset/foto/galeri-3.webp" alt="Tangan yang bertaut" loading="lazy" decoding="async"></figure>
-      <h3>Awal Pertemuan</h3>
-      <p>Kami bertemu dalam sebuah kesempatan yang sederhana. Tidak ada rencana besar, hanya obrolan ringan yang ternyata terus berlanjut dan membuat kami ingin saling mengenal lebih jauh.</p>
-    </div>
-    <div class="chapter rv">
-      <figure class="pola"><img src="aset/foto/galeri-4.webp" alt="Roncean melati pengantin" loading="lazy" decoding="async"></figure>
-      <h3>Dua Dunia</h3>
-      <p>Dari Tanah Batak dan Tanah Jawa, kami belajar bahwa perbedaan adat bukan jarak, melainkan kekayaan. Keluarga kami saling membuka pintu, dan dari sana kami belajar menghargai satu sama lain.</p>
-    </div>
-    <div class="chapter rv">
-      <figure class="pola"><img src="aset/foto/galeri-2.webp" alt="Sepasang cincin" loading="lazy" decoding="async"></figure>
-      <h3>Komitmen</h3>
-      <p>Dengan restu kedua keluarga dan rasa syukur, kami memutuskan untuk mengikat janji dan melangkah bersama, menyatukan dua adat dalam satu rumah tangga.</p>
-    </div>
   </div>
 </section>
 <div class="pita-seam" data-floral="pita"></div>
@@ -1415,7 +1368,7 @@ body{background:none}
 
   /* ---------- Gerak mengikuti gulir ---------- */
   var E = {}; [["h",".pg-house"],["t",".pg-txt"],["f",".pg-front"],["m",".pg-moon"],["l",".pg-cur.l"],["r",".pg-cur.r"],["a",".pg-c.l"],["b",".pg-c.r"],["i",".pg-hint"]].forEach(function(x){ E[x[0]] = $(x[1]).style; });
-  var pg = $("#panggung"), tl = $("#tl"), chs = $$(".chapter"), plx = $$("[data-plx]"), tick = false;
+  var pg = $("#panggung"), plx = $$("[data-plx]"), tick = false;
   function cl(v){ return Math.max(0,Math.min(1,v)); }
   function ease(v){ return v*v*(3-2*v); }
   var goal = 0, now = 0, last = -1, anim = false, lt = 0, pin = $(".pg-in");
@@ -1432,7 +1385,6 @@ body{background:none}
   function upd(){
     tick = false; var vh = innerHeight, r = pg.getBoundingClientRect();
     if (!reduce){ goal = cl(-r.top/(r.height-pin.offsetHeight)); if (r.bottom < -50 || r.top > vh+50) now = goal; if (!anim && goal !== last){ anim = true; requestAnimationFrame(glide); } }
-    r = tl.getBoundingClientRect(); if (r.bottom>0 && r.top<vh){ tl.style.setProperty("--g", cl((vh*.66-r.top)/r.height).toFixed(3)); chs.forEach(function(c){ c.classList.toggle("lit", c.getBoundingClientRect().top < vh*.66); }); }
     if (!reduce && scrollY < vh*1.2) plx.forEach(function(e){ e.style.translate = "0 "+(scrollY*parseFloat(e.dataset.plx)).toFixed(1)+"px"; });
   }
   addEventListener("scroll", function(){ if (!tick){ tick = true; requestAnimationFrame(upd); } }, {passive:true}); addEventListener("resize", upd); upd();
