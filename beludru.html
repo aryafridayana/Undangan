@@ -702,44 +702,25 @@ body{background:none}
 /* --- kado: kotak yang terbuka, kartu naik dari dalam --- */
 #hadiah{z-index:1}
 #hadiah .lead{max-width:36ch;margin-bottom:0}
-.kado{--k:clamp(168px,48vw,214px);position:relative;display:block;width:var(--k);height:calc(var(--k) * 1.16);margin:14px auto 0;padding:0;border:0;background:none;cursor:pointer;color:inherit;font:inherit}
-.kado>span{position:absolute;display:block}
-.kd-sinar{left:50%;bottom:calc(var(--k) * -.12);width:calc(var(--k) * 1.9);height:calc(var(--k) * 1.5);margin-left:calc(var(--k) * -.95);background:radial-gradient(closest-side,rgba(255,214,140,.34),rgba(255,214,140,.1) 55%,rgba(255,214,140,0));transition:opacity .9s,transform 1.2s var(--ease);opacity:.75;pointer-events:none}
-.kado.open .kd-sinar{opacity:1;transform:scale(1.18) translateY(-10%)}
-.kd-blk{left:2%;right:2%;bottom:calc(var(--k) * .04);height:calc(var(--k) * .56);z-index:1;background:linear-gradient(#2c070e,#4a1018 60%,#3a0a12);border-radius:3px;visibility:hidden}
-.kd-dpn{left:0;right:0;bottom:0;height:calc(var(--k) * .58);z-index:3;border-radius:2px 2px 5px 5px;background:
-  linear-gradient(90deg,rgba(120,84,40,0) 41.5%,rgba(90,60,24,.35) 42.4%,#a97c37 42.5%,#f6e4b0 46%,#dcb469 50%,#fbefc9 54%,#a97c37 57.5%,rgba(90,60,24,.35) 57.6%,rgba(120,84,40,0) 58.5%),
-  linear-gradient(rgba(70,36,16,.34),rgba(70,36,16,0) 22%,rgba(70,36,16,0) 70%,rgba(70,36,16,.24)),
-  linear-gradient(90deg,#c3ab84,#f3e6cd 16%,#fffaf0 36%,#f4e8d2 66%,#b99d73);
-  box-shadow:0 20px 22px -14px rgba(0,0,0,.75),inset 0 0 0 1px rgba(138,98,40,.3)}
-.kd-dpn::before{content:"";position:absolute;inset:8% 3.5%;border:1px solid rgba(160,118,52,.55);border-radius:2px}
-.kd-dpn b{position:absolute;left:50%;top:52%;width:calc(var(--k) * .31);height:calc(var(--k) * .31);margin:calc(var(--k) * -.155);border-radius:50%;display:flex;align-items:center;justify-content:center;font:400 calc(var(--k) * .12)/1 var(--f-script);color:#f8e7bd;background:radial-gradient(circle at 36% 28%,#a5263c,#6b1324 62%,#4b0c18);box-shadow:0 3px 6px rgba(40,10,10,.5),inset 0 0 0 calc(var(--k) * .012) #7c1a2d,inset 0 0 0 calc(var(--k) * .02) rgba(248,231,189,.45)}
-.kd-dpn em{font-size:.62em;font-style:normal;margin:0 .08em}
-.kd-ttp{left:-4.5%;width:109%;bottom:calc(var(--k) * .55);height:calc(var(--k) * .6);z-index:4;transform-origin:50% 100%;animation:kdIntip 5s ease-in-out infinite;transition:transform 1.1s cubic-bezier(.3,.7,.25,1)}
-@keyframes kdIntip{0%,70%,100%{transform:none}80%{transform:translateY(-5%) rotate(-2.4deg)}88%{transform:translateY(-2%) rotate(1.6deg)}}
-.kd-tbl{position:absolute;left:0;right:0;bottom:0;height:calc(var(--k) * .17);border-radius:4px 4px 2px 2px;background:
-  linear-gradient(90deg,rgba(90,60,24,0) 41.5%,#a97c37 42.4%,#f6e4b0 46%,#dcb469 50%,#fbefc9 54%,#a97c37 57.6%,rgba(90,60,24,0) 58.5%),
-  linear-gradient(rgba(255,255,255,.6),rgba(255,255,255,0) 20%,rgba(70,36,16,0) 70%,rgba(70,36,16,.28)),
-  linear-gradient(90deg,#c9b28c,#f7ecd6 16%,#fffcf4 36%,#f7ecd8 66%,#c1a67c);box-shadow:0 6px 8px -3px rgba(50,20,8,.55),inset 0 0 0 1px rgba(138,98,40,.28)}
-.kd-tbl::after{content:"";position:absolute;left:0;right:0;bottom:14%;border-top:1px solid rgba(160,118,52,.6)}
-.kd-pita{position:absolute;left:50%;bottom:calc(var(--k) * .11);width:calc(var(--k) * .78);max-width:none;margin-left:calc(var(--k) * -.39);height:auto}
-.kd-ktm{position:absolute;left:50%;bottom:calc(var(--k) * .1);width:calc(var(--k) * .36);margin-left:calc(var(--k) * -.18)}
-.kd-ktm img{display:block;width:100%;height:auto}
-.kd-bunga{left:3%;right:3%;bottom:calc(var(--k) * .5);height:calc(var(--k) * .4);z-index:2;overflow:visible;visibility:hidden}
-.kd-bunga img{position:absolute;bottom:0;width:25%;margin-left:-5%;height:auto;transform:translateY(115%) scale(.7);transition:transform .9s calc(.25s + var(--t)) cubic-bezier(.3,1.3,.5,1)}
-.kado.open .kd-blk,.kado.open .kd-bunga,.kado.goyang .kd-blk{visibility:visible}
-.kado.open .kd-bunga img{transform:translateY(calc(6% - var(--y)))}
-.kado.goyang{animation:kdGoyang .52s ease-in-out}
-.kado.goyang .kd-ttp{animation:none}
-@keyframes kdGoyang{0%,100%{transform:none}20%{transform:rotate(-3deg)}40%{transform:rotate(3deg)}60%{transform:rotate(-3deg) translateY(-2%)}80%{transform:rotate(2deg)}}
+.kado{--k:min(108vw,470px);position:relative;display:block;width:var(--k);height:calc(var(--k) * .56);margin:6px 0 0;left:50%;margin-left:calc(var(--k) * -.5);padding:0;border:0;background:none;cursor:pointer;color:inherit;font:inherit}
+.kd-sinar{position:absolute;display:block;left:15%;right:15%;bottom:2%;height:96%;background:radial-gradient(closest-side,rgba(255,206,130,.26),rgba(255,206,130,.08) 55%,rgba(255,206,130,0));transition:opacity 1.2s;opacity:.6;pointer-events:none}
+.kado.open .kd-sinar{opacity:1}
+.kd-lap,.kd-f,.kd-lap>*{position:absolute;left:0;bottom:0;width:100%;height:auto;aspect-ratio:600/516;pointer-events:none;display:block}
+.kd-lap{bottom:calc(var(--k) * -.06);z-index:1;transform-origin:50% 88%}
+.kd-f{bottom:calc(var(--k) * -.06);z-index:3;visibility:hidden}
+.kd-lap canvas,.kd-b{visibility:hidden}
+.kado.main canvas,.kado.open .kd-b,.kado.open .kd-f{visibility:visible}
+.kado.main .kd-a,.kado.open .kd-a{visibility:hidden}
+.kado:not(.main):not(.open):not(.goyang) .kd-lap{animation:kdAjak 5s ease-in-out infinite}
+@keyframes kdAjak{0%,78%,100%{transform:none}81%{transform:rotate(-1.4deg)}84%{transform:rotate(1.4deg)}87%{transform:rotate(-1deg)}90%{transform:rotate(.7deg)}}
+.kado.goyang .kd-lap{animation:kdGoyang .42s ease-in-out}
+@keyframes kdGoyang{0%,100%{transform:none}25%{transform:rotate(-2.2deg)}50%{transform:rotate(2.2deg)}75%{transform:rotate(-1.4deg)}}
 .kado.open{cursor:default}
-.kado.open .kd-ttp{animation:kdLepas 1.25s cubic-bezier(.35,0,.25,1) both}
-@keyframes kdLepas{0%{transform:none;transform-origin:50% 100%}40%{transform:translate(-14%,-62%) rotate(-24deg)}100%{transform:translate(-50%,10%) rotate(-72deg)}}
-.kd-cta{margin:16px auto 0;font-size:.98rem;letter-spacing:.08em}
+.kd-cta{position:relative;margin:20px auto 0;font-size:.98rem;letter-spacing:.08em}
 .isi{display:none;max-width:330px;margin:26px auto 0}
 .isi.on{display:block}
-.krt,.krm{position:relative;z-index:2;text-align:left;animation:krtNaik 1.5s .25s cubic-bezier(.4,0,.2,1) both}
-.krt+.krt{animation-delay:.45s}.krm{animation-delay:.65s}
+.krt,.krm{position:relative;z-index:2;text-align:left;animation:krtNaik 1.5s .02s cubic-bezier(.4,0,.2,1) both}
+.krt+.krt{animation-delay:.22s}.krm{animation-delay:.42s}
 @keyframes krtNaik{0%{transform:translateY(var(--dy,-200px)) scale(.3);z-index:2}42%{transform:translateY(calc(var(--dy,-200px) - 150px)) scale(.52) rotate(-5deg);z-index:2}43%{z-index:6}100%{transform:none;z-index:6}}
 .krt{aspect-ratio:1.62;border-radius:16px;overflow:hidden;color:#fbf0d6;padding:18px 20px;box-shadow:0 0 0 1px #d8b46c,0 18px 26px -14px rgba(0,0,0,.8);text-shadow:0 1px 3px rgba(0,0,0,.65)}
 .krt+.krt{margin-top:16px}
@@ -762,9 +743,9 @@ body{background:none}
 .krm p{margin-top:4px;font-size:1.02rem}.krm strong{display:block;margin-top:8px;font-size:1.14rem;font-weight:700;line-height:1.3}
 .krm .konf{display:block;margin:3px 0 12px;font-variant-numeric:lining-nums}
 .krm .copy{position:relative;z-index:1}
-@media (max-width:600px){.isi{max-width:300px}.kado{--k:clamp(150px,46vw,186px)}}
+@media (max-width:600px){.isi{max-width:300px}}
 @media (max-width:350px){.krt{padding:15px 16px}.krt .no{left:16px;font-size:1.45rem}.cip,.krt .nma{left:16px}.krt .adat{right:16px}.krt .copy{right:14px;min-width:84px;padding-inline:12px}.krt .nma{right:104px;font-size:.94rem}}
-@media (prefers-reduced-motion:reduce){.kado,.kado *,.krt,.krm{animation:none!important;transition:none!important}.kado.open .kd-ttp{transform:translate(-50%,10%) rotate(-72deg)}}
+@media (prefers-reduced-motion:reduce){.kado,.kado *,.krt,.krm{animation:none!important;transition:none!important}}
 @media (prefers-reduced-motion:reduce){
   .panggung{height:100svh;--c:1!important;--z:1!important}.pg-hint{display:none}
   .pita-seam img{opacity:1;transform:translateY(-50%)}.tilt.in{transform:none}#petals,#pal{display:none}
@@ -960,17 +941,8 @@ body{background:none}
   <p class="lead rv">Doa restu dan kehadiran Anda merupakan karunia yang sangat berarti bagi kami. Namun, jika memberi adalah ungkapan tanda kasih, Anda dapat memberi melalui kado di bawah ini.</p>
   <button class="kado" id="kado" type="button" aria-expanded="false" aria-controls="isiKado" aria-label="Buka kado">
     <span class="kd-sinar" aria-hidden="true"></span>
-    <span class="kd-blk" aria-hidden="true"></span>
-    <span class="kd-bunga" aria-hidden="true"><img src="aset/bunga/k-wine.webp" alt="" style="left:4%;--y:16%;--t:0s"><img src="aset/bunga/k-hydr.webp" alt="" style="left:17%;--y:12%;--t:0.05s"><img src="aset/bunga/k-blush.webp" alt="" style="left:31%;--y:22%;--t:0.12s"><img src="aset/bunga/k-bur.webp" alt="" style="left:42%;--y:10%;--t:0.02s"><img src="aset/bunga/k-ivory.webp" alt="" style="left:56%;--y:20%;--t:0.1s"><img src="aset/bunga/k-dusty.webp" alt="" style="left:67%;--y:12%;--t:0.06s"><img src="aset/bunga/k-wrose.webp" alt="" style="left:80%;--y:17%;--t:0.03s"></span>
-    <span class="kd-dpn" aria-hidden="true"><b>J<em>&amp;</em>L</b></span>
-    <span class="kd-ttp" aria-hidden="true"><svg class="kd-pita" viewBox="0 0 200 110" aria-hidden="true"><defs>
-<linearGradient id="sa" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff3cf"/><stop offset=".35" stop-color="#e3bd73"/><stop offset=".62" stop-color="#b8853d"/><stop offset="1" stop-color="#f3dca2"/></linearGradient>
-<linearGradient id="sb" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff3cf"/><stop offset=".35" stop-color="#e3bd73"/><stop offset=".62" stop-color="#b8853d"/><stop offset="1" stop-color="#f3dca2"/></linearGradient>
-<linearGradient id="sc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a5f26"/><stop offset="1" stop-color="#c99a50"/></linearGradient></defs>
-<path d="M96 74C80 84 58 92 40 108l20-3 8 5c10-12 22-22 34-34z" fill="url(#sb)"/><path d="M104 74c16 10 38 18 56 34l-20-3-8 5c-10-12-22-22-34-34z" fill="url(#sa)"/>
-<path d="M98 72C70 88 14 84 8 54 4 26 44 14 66 32c16 13 26 28 32 40z" fill="url(#sa)"/><path d="M96 70C76 72 40 70 34 54c-3-12 18-18 32-8 12 8 22 16 30 24z" fill="url(#sc)"/>
-<path d="M102 72c28 16 84 12 90-18 4-28-36-40-58-22-16 13-26 28-32 40z" fill="url(#sb)"/><path d="M104 70c20 2 56 0 62-16 3-12-18-18-32-8-12 8-22 16-30 24z" fill="url(#sc)"/>
-<path d="M14 44c14-18 40-14 52-6M186 44c-14-18-40-14-52-6" fill="none" stroke="#fff6dd" stroke-opacity=".7" stroke-width="1.6"/></svg><span class="kd-ktm" data-floral="gugus"></span><span class="kd-tbl"></span></span>
+    <span class="kd-lap" aria-hidden="true"><img class="kd-a" src="aset/kado/tutup.webp" alt="" loading="lazy" decoding="async"><img class="kd-b" src="aset/kado/buka.webp" alt="" loading="lazy" decoding="async"><canvas width="600" height="516"></canvas></span>
+    <img class="kd-f" src="aset/kado/depan.webp" alt="" loading="lazy" decoding="async">
   </button>
   <p class="kd-cta" id="kadoCta">Ketuk kado untuk membuka</p>
   <div class="isi" id="isiKado">
@@ -1504,18 +1476,34 @@ body{background:none}
   im.draggable = false;
 
   /* ---------- Kado dibuka ---------- */
-  var kado = $("#kado"), isi = $("#isiKado");
+  var kado = $("#kado"), isi = $("#isiKado"), kf = [], KN = 36, kc = $("canvas",kado), kx = kc.getContext("2d");
+  /* gambar gerak tutup disiapkan saat bagian ini sudah dekat */
+  if (!reduce) new IntersectionObserver(function(es,o){ if (!es[0].isIntersecting) return; o.disconnect();
+    for (var i=0;i<KN;i++) (function(i){ var im = new Image(); im.src = "aset/kado/f"+(i<10?"0":"")+i+".webp"; im.decode().then(function(){ kf[i] = im; }, function(){}); })(i);
+  }, {rootMargin:"1600px 0px"}).observe(kado);
+  function kadoBuka(){
+    kado.classList.remove("main"); kado.classList.add("open"); kf = []; isi.classList.add("on");
+    var y = kado.offsetTop+kado.offsetHeight*.66;
+    [].forEach.call(isi.children, function(e){ e.style.setProperty("--dy", (y-e.offsetTop-e.offsetHeight/2).toFixed(0)+"px"); });
+    if (!reduce) setTimeout(function(){ var b = kado.getBoundingClientRect().top, e = isi.children[1], lebih = b+e.offsetTop+e.offsetHeight-kado.offsetTop-innerHeight+20; if (lebih > 0 && b > 0) scrollBy({top:Math.min(lebih,Math.max(0,b-8)),behavior:"smooth"}); }, 1200);
+  }
+  function kadoMain(){
+    $("#kadoCta").textContent = "Terima kasih atas tanda kasihnya";
+    var n = 0; for (var i=0;i<KN;i++) if (kf[i]) n++;
+    if (reduce || !kf[0] || n < KN*.6){ kadoBuka(); return; }
+    var t0 = 0, akhir = -1, lama = 1350, meledak = false;
+    kx.clearRect(0,0,600,516); kx.drawImage(kf[0],0,0,600,516); kado.classList.add("main");
+    requestAnimationFrame(function s(t){ t0 = t0||t; var k = Math.min(1,(t-t0)/lama), i = Math.round(k*(KN-1));
+      while (i > 0 && !kf[i]) i--;
+      if (i !== akhir){ akhir = i; kx.clearRect(0,0,600,516); kx.drawImage(kf[i],0,0,600,516); }
+      if (!meledak && k > .22){ meledak = true; var m = kado.getBoundingClientRect(); burst(m.left+m.width/2, m.top+m.height*.45, 10); }
+      if (k < 1) requestAnimationFrame(s); else kadoBuka(); });
+  }
   kado.addEventListener("click", function(){
-    if (kado.classList.contains("goyang") || kado.classList.contains("open")) return;
-    kado.classList.add("goyang"); kado.setAttribute("aria-expanded","true");
-    setTimeout(function(){
-      kado.classList.remove("goyang"); kado.classList.add("open"); $("#kadoCta").textContent = "Terima kasih atas tanda kasihnya";
-      isi.classList.add("on");
-      var m = kado.getBoundingClientRect(), y = kado.offsetTop+kado.offsetHeight*.74;
-      [].forEach.call(isi.children, function(e){ e.style.setProperty("--dy", (y-e.offsetTop-e.offsetHeight/2).toFixed(0)+"px"); });
-      burst(m.left+m.width/2, m.top+m.height*.5, 12);
-      if (!reduce) setTimeout(function(){ var b = kado.getBoundingClientRect().top, e = isi.children[1], lebih = b+e.offsetTop+e.offsetHeight-kado.offsetTop-innerHeight+20; if (lebih > 0 && b > 0) scrollBy({top:Math.min(lebih,b-18),behavior:"smooth"}); }, 1500);
-    }, reduce?0:520);
+    if (kado.getAttribute("aria-expanded") === "true") return;
+    kado.setAttribute("aria-expanded","true"); kado.classList.add("goyang");
+    [".kd-b",".kd-f"].forEach(function(q){ var e = $(q,kado); e.loading = "eager"; if (e.decode) e.decode().catch(function(){}); });
+    setTimeout(function(){ kado.classList.remove("goyang"); kadoMain(); }, reduce?0:420);
   });
   $$(".copy").forEach(function(b){ b.addEventListener("click", function(){ var m = mid(b); burst(m[0],m[1],8); }); });
   $("#rsvpForm").addEventListener("submit", function(){ if (!$("#formMsg").hidden && /^Terima/.test($("#formMsg").textContent)){ var m = mid($(".send")); burst(m[0],m[1]-60,36); } });
