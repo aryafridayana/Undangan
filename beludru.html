@@ -754,6 +754,12 @@ body{background:none}
 .ayat cite{display:block;margin-top:12px;font-style:normal;font-weight:600;font-size:.86rem;letter-spacing:.16em;text-transform:uppercase;color:#f0d694}
 .ayat::after{content:"";position:absolute;left:50%;bottom:0;width:64px;height:1px;margin-left:-32px;background:linear-gradient(90deg,transparent,#f0d694,transparent)}
 @media (max-width:420px){.ayat p{font-size:1rem;line-height:1.55}.ayat{margin-bottom:24px;padding-bottom:22px}}
+/* --- tanggal: isi oval rata dan muat --- */
+.tgl div{grid-template-rows:auto 2.7rem;place-content:center;justify-items:center;gap:0;padding:0 8%;text-align:center}
+.tgl small{letter-spacing:.1em;padding-bottom:7px;margin-bottom:6px;border-bottom:1px solid rgba(90,40,20,.35);min-width:3.2em}
+.tgl b{display:grid;place-items:center;height:100%;line-height:1;white-space:nowrap}
+.tgl b.w{font-size:1.6rem}.tgl b.bl{font-size:1.3rem;letter-spacing:.01em}
+@media (max-width:420px){.tgl div{grid-template-rows:auto 2.3rem}.tgl b.w{font-size:1.4rem}.tgl b.bl{font-size:1.1rem}.tgl small{padding-bottom:5px;margin-bottom:5px}}
 @media (prefers-reduced-motion:reduce){
   .panggung{height:100svh;--c:1!important;--z:1!important}.pg-hint{display:none}
   .pita-seam img{opacity:1;transform:translateY(-50%)}.tilt.in{transform:none}#petals,#pal{display:none}
@@ -866,7 +872,7 @@ body{background:none}
   </div>
   <div class="tgl" role="group" aria-label="Minggu, 3 Januari 2027">
     <div><small>Minggu</small><b>03</b></div>
-    <div><small>Bulan</small><b class="w">Januari</b></div>
+    <div><small>Bulan</small><b class="w bl">Januari</b></div>
     <div><small>Tahun</small><b class="w">2027</b></div>
   </div>
   <div class="daterow rv">
