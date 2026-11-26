@@ -1130,11 +1130,8 @@ body{background:none}
       '<circle cx="27" cy="22" r="7" fill="#6b1324"/><path d="M18 32q9-8 18 0v12H18z" fill="#5c0f1c"/><rect x="16" y="40" width="22" height="5" rx="2" fill="#7a1a2b"/>'+str+'</svg>';
   };
   G.pframe = function(){
-    function cross(x,y){ return '<path d="M'+x+' '+(y-13)+'V'+(y+13)+'M'+(x-13)+' '+y+'H'+(x+13)+'"/><path d="M'+(x-5)+' '+(y-9)+'h10M'+(x-5)+' '+(y+9)+'h10M'+(x-9)+' '+(y-5)+'v10M'+(x+9)+' '+(y-5)+'v10"/>'; }
-    function side(x,y){ return '<path d="M'+x+' '+(y-14)+'l6 14-6 14-6-14z"/><path d="M'+x+' '+(y-22)+'v6M'+x+' '+(y+16)+'v6"/>'; }
     return '<svg viewBox="0 0 200 260"><g fill="none" stroke="#c9a96a" stroke-width="1.2">'+
-      '<ellipse cx="100" cy="130" rx="77" ry="121"/><ellipse cx="100" cy="130" rx="72" ry="116" stroke-width=".7"/>'+
-      cross(20,20)+cross(180,20)+cross(20,240)+cross(180,240)+side(8,130)+side(192,130)+'</g></svg>';
+      '<ellipse cx="100" cy="130" rx="77" ry="121"/><ellipse cx="100" cy="130" rx="72" ry="116" stroke-width=".7"/></g></svg>';
   };
   G.butterfly = function(){
     return '<svg viewBox="0 0 40 30"><g class="wl"><path d="M20 15C14 2 2 2 3 9c1 5 8 7 17 6z" fill="#f4eef0" opacity=".95"/><path d="M20 16c-7 1-13 5-11 10 2 4 8-1 11-10z" fill="#e9dde2"/></g><g class="wr"><path d="M20 15c6-13 18-13 17-6-1 5-8 7-17 6z" fill="#f4eef0" opacity=".95"/><path d="M20 16c7 1 13 5 11 10-2 4-8-1-11-10z" fill="#e9dde2"/></g><path d="M20 10v13" stroke="#8b7b80" stroke-width="1.4" stroke-linecap="round"/></svg>';
