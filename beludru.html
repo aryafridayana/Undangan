@@ -4397,28 +4397,33 @@
     /* tanpa kartu acara: Dress Code langsung menyambung bagian tanggal */
     #acara{padding-top:0!important;display:flow-root}
 
-    /* ===== isi tirai: gaya kertas krem (kop gunungan, nama, foto lengkung) ===== */
-    #panggung .pg-in{background:#efe7d9}
+    /* ===== isi tirai: gaya kertas krem (kop gunungan, pohon, wayang, foto lengkung) ===== */
+    #panggung .pg-in{background:#efe7d9;--kt:max(50px,6.5svh);--kw:min(100vw,480px,52svh);--aw:min(62vw,33svh,290px);--ah:min(44svh,calc(var(--aw) * 1.52))}
     #panggung .pg-in::after{display:none!important}
-    .pg-kertas{inset:0;z-index:0;background:radial-gradient(120% 70% at 50% 35%,#f8f3ea,#efe6d6 60%,#e4d8c4);}
-    .pg-kertas::after{content:"";position:absolute;inset:0;opacity:.35;background-image:var(--grain-l);mix-blend-mode:multiply}
-    .pg-gunung{left:0;right:0;top:22svh;height:46svh;width:100%;z-index:0;opacity:.55;filter:blur(2px)}
-    .pg-kop{left:50%;top:max(50px,6.5svh);width:min(100%,480px,52svh);height:auto;translate:-50% 0;z-index:2}
-    #panggung .pg-txt{left:8px;right:8px;top:calc(max(50px,6.5svh) + min(100vw,480px,52svh) * .27)!important;bottom:auto;text-shadow:none!important;color:#7a6650;z-index:3}
+    #panggung .pg-c{display:none!important}
+    .pg-kertas{inset:0;z-index:0;background:radial-gradient(120% 70% at 50% 35%,#f8f3ea,#efe6d6 60%,#e6dac7)}
+    .pg-gunung{left:50%;top:calc(var(--kt) + var(--kw) * .2);width:min(120%,62svh);height:auto;translate:-50% 0;z-index:0;opacity:.6;-webkit-mask-image:linear-gradient(#000 55%,transparent 98%);mask-image:linear-gradient(#000 55%,transparent 98%)}
+    .pg-kop{left:50%;top:var(--kt);width:var(--kw);height:auto;translate:-50% 0;z-index:1}
+    .pg-pohon{top:calc(var(--kt) - 18px);width:min(46%,25svh);height:auto;z-index:2;filter:drop-shadow(0 4px 6px rgba(80,30,30,.12))}
+    .pg-pohon.l{left:-13%}.pg-pohon.r{right:-13%;transform:scaleX(-1)}
+    #panggung .pg-txt{left:14%;right:14%;top:calc(var(--kt) + var(--kw) * .3 + 2px)!important;bottom:auto;text-shadow:none!important;color:#7a6650;z-index:3}
     #panggung .pg-txt::before{display:none!important}
     #panggung .pg-small{font-family:var(--f-serif);font-style:normal;font-size:min(4.8vw,2.4svh,1.3rem);letter-spacing:.04em;color:#8a7158;margin:0}
-    #panggung .pg-txt h2{font-family:var(--f-deco);font-size:min(15vw,6.8svh,4.4rem);line-height:.98;margin:.02em 0 .12em;color:#7d1f26!important;-webkit-text-fill-color:#7d1f26!important;background:none!important;filter:none!important;animation:none!important;padding:.1em .3em}
+    #panggung .pg-txt h2{font-family:var(--f-deco);font-size:min(15vw,6.8svh,4.4rem);line-height:.98;margin:.02em -.4em .12em;color:#7d1f26!important;-webkit-text-fill-color:#7d1f26!important;background:none!important;filter:none!important;animation:none!important;padding:.1em .3em}
     #panggung .pg-txt h2 span{font-size:.62em;color:#7d1f26;display:inline-block;margin:-.1em 0}
-    #panggung .pg-date{font-family:var(--f-serif);font-weight:500;letter-spacing:.14em;font-size:clamp(.8rem,3.4vw,.95rem);color:#8a7158;text-transform:uppercase}
-    .pg-arch{left:50%;bottom:0;width:min(64%,34svh,300px);height:min(45svh,calc(min(64vw,34svh,300px) * 1.5));translate:0 0;transform:translate3d(-50%,8%,0) scale(.94);transform-origin:50% 100%;z-index:3;border-radius:999px 999px 0 0;padding:6px 6px 0;background:linear-gradient(180deg,#9a6a3c,#7a4e2a);box-shadow:0 0 0 1px #c8a77a,0 -6px 26px rgba(90,60,30,.25)}
+    #panggung .pg-date{font-family:var(--f-serif);font-weight:500;letter-spacing:.14em;font-size:min(3.4vw,1.7svh,.95rem);color:#8a7158;text-transform:uppercase;white-space:nowrap}
+    .pg-sisi{top:calc(100% - var(--ah) - min(14svh,26vw));width:min(30%,16svh);z-index:2}
+    .pg-sisi.l{left:-7%}.pg-sisi.r{right:-7%}
+    .pg-wayang{--ww:min(46vw,25svh,220px);bottom:calc(var(--ah) * .2);width:var(--ww);height:auto;z-index:2;filter:drop-shadow(0 6px 8px rgba(60,40,20,.25))}
+    .pg-wayang.l{left:calc(50% - var(--aw) / 2 - var(--ww) * .66);transform:scaleX(-1)}
+    .pg-wayang.r{right:calc(50% - var(--aw) / 2 - var(--ww) * .66)}
+    .pg-arch{left:50%;bottom:0;width:var(--aw);height:var(--ah);transform:translate3d(-50%,8%,0) scale(.94);transform-origin:50% 100%;z-index:3;border-radius:999px 999px 0 0;padding:6px 6px 0;background:linear-gradient(180deg,#9a6a3c,#7a4e2a);box-shadow:0 0 0 1px #c8a77a,0 -6px 26px rgba(90,60,30,.25)}
     .pg-arch img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 30%;border-radius:999px 999px 0 0;filter:saturate(.9)}
-    .pg-sisi{top:max(30px,4svh);width:min(30%,16svh);z-index:2}
-    .pg-sisi.l{left:-2%}.pg-sisi.r{right:-2%}
-    .pg-gugus{bottom:8svh;width:min(28%,15svh);z-index:4}
-    .pg-gugus.l{left:-4%}.pg-gugus.r{right:-4%}
-    .pg-kupu{width:34px;height:26px;z-index:4;top:calc(100% - min(45svh,calc(min(64vw,34svh,300px) * 1.5)) - 4px)}
-    .pg-kupu.l{left:14%}.pg-kupu.r{right:14%;transform:scaleX(-1)}
-    #panggung .pg-front{z-index:5;width:min(96%,46svh)!important;bottom:-4svh!important}
+    .pg-gugus{bottom:3svh;width:min(30%,15svh);z-index:4}
+    .pg-gugus.l{left:-5%}.pg-gugus.r{right:-5%}
+    .pg-kupu{width:30px;height:23px;z-index:4;top:calc(100% - var(--ah) + 2px)}
+    .pg-kupu.l{left:calc(50% - var(--aw) / 2 - 26px)}.pg-kupu.r{right:calc(50% - var(--aw) / 2 - 26px);transform:scaleX(-1)}
+    #panggung .pg-front{z-index:5;width:min(92%,44svh)!important;bottom:-5svh!important}
     #panggung .pg-hint{color:#f6e3ae}
 </style>
 </head>
@@ -4472,15 +4477,19 @@
       <section class="panggung" id="panggung" aria-label="Iqbal dan Sakha">
         <div class="pg-in">
           <div class="pg-kertas" aria-hidden="true"></div>
-          <svg class="pg-gunung" viewBox="0 0 400 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><path d="M0 300V236c26-6 44-22 66-30 20-8 30-26 50-40 18-12 26-36 44-60 10-14 20-30 32-46 8 14 18 26 26 40 14 22 26 44 46 58 18 12 32 24 50 34 22 12 44 20 86 26v82z" fill="#d6cebf"/><path d="M200 30c-10 40-30 80-20 120s-30 60-40 150h60c0-60 20-100 10-150s-5-80-10-120z" fill="#c2b8a8" opacity=".6"/></svg>
+          <img class="pg-gunung" src="aset/panggung/gunung.webp" alt="" aria-hidden="true" decoding="async">
           <svg class="pg-kop" viewBox="0 0 400 124" preserveAspectRatio="xMidYMin meet" aria-hidden="true"><g fill="none" stroke="#a8927a" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round"><g opacity=".75"><path d="M-20 2l16 16-16 16-16-16z"/><path d="M-20 10l8 8-8 8-8-8z"/><path d="M-40 2l10 10-10 10M0 2l-10 10 10 10"/><path d="M20 2l16 16-16 16-16-16z"/><path d="M20 10l8 8-8 8-8-8z"/><path d="M0 2l10 10-10 10M40 2l-10 10 10 10"/><path d="M60 2l16 16-16 16-16-16z"/><path d="M60 10l8 8-8 8-8-8z"/><path d="M40 2l10 10-10 10M80 2l-10 10 10 10"/><path d="M100 2l16 16-16 16-16-16z"/><path d="M100 10l8 8-8 8-8-8z"/><path d="M80 2l10 10-10 10M120 2l-10 10 10 10"/><path d="M140 2l16 16-16 16-16-16z"/><path d="M140 10l8 8-8 8-8-8z"/><path d="M120 2l10 10-10 10M160 2l-10 10 10 10"/><path d="M180 2l16 16-16 16-16-16z"/><path d="M180 10l8 8-8 8-8-8z"/><path d="M160 2l10 10-10 10M200 2l-10 10 10 10"/><path d="M220 2l16 16-16 16-16-16z"/><path d="M220 10l8 8-8 8-8-8z"/><path d="M200 2l10 10-10 10M240 2l-10 10 10 10"/><path d="M260 2l16 16-16 16-16-16z"/><path d="M260 10l8 8-8 8-8-8z"/><path d="M240 2l10 10-10 10M280 2l-10 10 10 10"/><path d="M300 2l16 16-16 16-16-16z"/><path d="M300 10l8 8-8 8-8-8z"/><path d="M280 2l10 10-10 10M320 2l-10 10 10 10"/><path d="M340 2l16 16-16 16-16-16z"/><path d="M340 10l8 8-8 8-8-8z"/><path d="M320 2l10 10-10 10M360 2l-10 10 10 10"/><path d="M380 2l16 16-16 16-16-16z"/><path d="M380 10l8 8-8 8-8-8z"/><path d="M360 2l10 10-10 10M400 2l-10 10 10 10"/><path d="M420 2l16 16-16 16-16-16z"/><path d="M420 10l8 8-8 8-8-8z"/><path d="M400 2l10 10-10 10M440 2l-10 10 10 10"/><path d="M460 2l16 16-16 16-16-16z"/><path d="M460 10l8 8-8 8-8-8z"/><path d="M440 2l10 10-10 10M480 2l-10 10 10 10"/><path d="M500 2l16 16-16 16-16-16z"/><path d="M500 10l8 8-8 8-8-8z"/><path d="M480 2l10 10-10 10M520 2l-10 10 10 10"/><path d="M540 2l16 16-16 16-16-16z"/><path d="M540 10l8 8-8 8-8-8z"/><path d="M520 2l10 10-10 10M560 2l-10 10 10 10"/><path d="M580 2l16 16-16 16-16-16z"/><path d="M580 10l8 8-8 8-8-8z"/><path d="M560 2l10 10-10 10M600 2l-10 10 10 10"/><path d="M620 2l16 16-16 16-16-16z"/><path d="M620 10l8 8-8 8-8-8z"/><path d="M600 2l10 10-10 10M640 2l-10 10 10 10"/><path d="M660 2l16 16-16 16-16-16z"/><path d="M660 10l8 8-8 8-8-8z"/><path d="M640 2l10 10-10 10M680 2l-10 10 10 10"/><path d="M700 2l16 16-16 16-16-16z"/><path d="M700 10l8 8-8 8-8-8z"/><path d="M680 2l10 10-10 10M720 2l-10 10 10 10"/><path d="M740 2l16 16-16 16-16-16z"/><path d="M740 10l8 8-8 8-8-8z"/><path d="M720 2l10 10-10 10M760 2l-10 10 10 10"/><path d="M780 2l16 16-16 16-16-16z"/><path d="M780 10l8 8-8 8-8-8z"/><path d="M760 2l10 10-10 10M800 2l-10 10 10 10"/><path d="M820 2l16 16-16 16-16-16z"/><path d="M820 10l8 8-8 8-8-8z"/><path d="M800 2l10 10-10 10M840 2l-10 10 10 10"/></g><path d="M0 40H400M0 44H400" stroke-width=".8"/><path d="M200 4C214 28 240 50 242 80c2 22-18 38-42 38s-44-16-42-38c2-30 28-52 42-76z" fill="#efe6d6"/><path d="M200 4C214 28 240 50 242 80c2 22-18 38-42 38s-44-16-42-38c2-30 28-52 42-76z"/><path d="M200 14c11 20 32 40 34 66 1 18-15 30-34 30s-35-12-34-30c2-26 23-46 34-66z" stroke-width=".7"/><path d="M200 108V26"/><path d="M200 36c6-6 8-6 12 2 2 5-2 9-6 7s-3-7 0-7"/><path d="M200 36c-6-6 -8-6 -12 2 -2 5 2 9 6 7s3-7 0-7"/><path d="M200 50c6-6 16-6 20 2 2 5-2 9-6 7s-3-7 0-7"/><path d="M200 50c-6-6 -16-6 -20 2 -2 5 2 9 6 7s3-7 0-7"/><path d="M200 64c6-6 22-6 26 2 2 5-2 9-6 7s-3-7 0-7"/><path d="M200 64c-6-6 -22-6 -26 2 -2 5 2 9 6 7s3-7 0-7"/><path d="M200 78c6-6 24-6 28 2 2 5-2 9-6 7s-3-7 0-7"/><path d="M200 78c-6-6 -24-6 -28 2 -2 5 2 9 6 7s3-7 0-7"/><path d="M184 96l16-10 16 10M188 96v14h24V96M196 110v-8h8v8" /></g></svg>
           <div class="pg-txt">
             <p class="pg-small">The Wedding of</p>
             <h2>Iqbal<br><span>&amp;</span><br>Sakha</h2>
             <p class="pg-date">Minggu · 03 Januari 2027</p>
           </div>
-          <div class="floral pg-sisi l sway" data-floral="juntai"></div>
-          <div class="floral pg-sisi r flip sway b" data-floral="juntai"></div>
+          <img class="pg-pohon l" src="aset/panggung/pohon.webp" alt="" aria-hidden="true" decoding="async">
+          <img class="pg-pohon r" src="aset/panggung/pohon.webp" alt="" aria-hidden="true" decoding="async">
+          <div class="floral pg-sisi l sway" data-floral="gugus"></div>
+          <div class="floral pg-sisi r flip sway b" data-floral="gugus"></div>
+          <img class="pg-wayang l" src="aset/panggung/wayang.webp" alt="" aria-hidden="true" decoding="async">
+          <img class="pg-wayang r" src="aset/panggung/wayang.webp" alt="" aria-hidden="true" decoding="async">
           <div class="pg-arch"><img src="aset/foto/prewed-05.webp" alt="Iqbal dan Sakha" decoding="async"></div>
           <div class="butterfly pg-kupu l" data-svg="butterfly"></div>
           <div class="butterfly pg-kupu r" data-svg="butterfly"></div>
@@ -4757,7 +4766,7 @@
           2.0), Tubifex (CC BY-SA 3.0), Rabe! &amp; Fmi2012 (CC BY-SA 3.0), B.navez (CC BY-SA 3.0), ChickenFreak &amp;
           Dusan Bicanski (domain publik). Rincian: <a href="aset/bunga/KREDIT.md" target="_blank"
             rel="noopener">KREDIT.md</a>.</p>
-        <p>Gambar rumah adat: dari pemilik undangan.</p>
+        <p>Wayang di tirai: Tropenmuseum (CC BY-SA 3.0), dipotong dari latarnya; pohon dan gunung digambar khusus. Rincian: <a href="aset/panggung/KREDIT.md" target="_blank" rel="noopener">KREDIT.md</a>.</p>
         <p>Foto mempelai &amp; galeri: dari pemilik undangan.</p>
         <p>Foto cincin &amp; kain: Drew Coffman, Petr Ovralov, Paul García, Anne Edgar, Wu Jianxiong (Unsplash, CC0);
           Astari28 (CC BY 4.0); Rijksmuseum &amp; Honolulu Museum of Art (CC0). Rincian: <a href="aset/foto/KREDIT.md"
