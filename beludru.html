@@ -4398,7 +4398,7 @@
     #acara{padding-top:0!important;display:flow-root}
 
     /* ===== isi tirai: gaya kertas krem (kop gunungan, pohon, wayang, foto lengkung) ===== */
-    #panggung .pg-in{background:#efe7d9;--kt:max(50px,6.5svh);--kw:min(100vw,480px,52svh);--aw:min(66vw,35svh,310px);--ah:min(44svh,calc(var(--aw) * 1.52))}
+    #panggung .pg-in{background:#efe7d9;--kt:max(50px,6.5svh);--kw:min(100vw,480px,52svh);--aw:min(66vw,35svh,310px);--nf:min(15vw,6.8svh,4.4rem);--tb:calc(var(--kt) + var(--kw) * .3 + var(--nf) * 3.1 + 6.6svh + 16px);--ah:min(54svh,calc(var(--aw) * 1.75),calc(100svh - var(--tb)))}
     #panggung .pg-in::after{display:none!important}
     #panggung .pg-c{display:none!important}
     .pg-kertas{inset:0;z-index:0;background:#eeeadc url(aset/panggung/latar.webp) 50% 18%/cover}
@@ -4414,18 +4414,22 @@
     #panggung .pg-txt{left:14%;right:14%;top:calc(var(--kt) + var(--kw) * .3 + 2px)!important;bottom:auto;text-shadow:none!important;color:#7a6650;z-index:3}
     #panggung .pg-txt::before{display:none!important}
     #panggung .pg-small{font-family:var(--f-serif);font-style:normal;font-size:min(4.8vw,2.4svh,1.3rem);letter-spacing:.04em;color:#8a7158;margin:0}
-    #panggung .pg-txt h2{font-family:var(--f-deco);font-size:min(15vw,6.8svh,4.4rem);line-height:.98;margin:.02em -.4em .12em;color:#7d1f26!important;-webkit-text-fill-color:#7d1f26!important;background:none!important;filter:none!important;animation:none!important;padding:.1em .3em}
+    #panggung .pg-txt h2{font-family:var(--f-deco);font-size:var(--nf);line-height:.98;margin:.02em -.4em .12em;color:#7d1f26!important;-webkit-text-fill-color:#7d1f26!important;background:none!important;filter:none!important;animation:none!important;padding:.1em .3em}
     #panggung .pg-txt h2 span{font-size:.62em;color:#7d1f26;display:inline-block;margin:-.1em 0}
     #panggung .pg-date{font-family:var(--f-serif);font-weight:500;letter-spacing:.14em;font-size:min(3.4vw,1.7svh,.95rem);color:#8a7158;text-transform:uppercase;white-space:nowrap}
-    .pg-sisi{top:calc(100% - var(--ah) - min(15svh,29vw));width:min(46%,24svh);height:auto;z-index:3;filter:drop-shadow(0 4px 6px rgba(60,20,20,.15))}
-    .pg-sisi.l{left:-17%;transform:scaleX(-1) rotate(-6deg)}.pg-sisi.r{right:-17%;transform:rotate(-6deg)}
-    .pg-wayang{--ww:min(25vw,13.5svh,124px);bottom:calc(var(--ah) * .12);width:var(--ww);height:auto;z-index:2;filter:drop-shadow(0 4px 6px rgba(60,40,20,.2))}
-    .pg-wayang.l{left:calc(50% - var(--aw) / 2 - var(--ww) * .86);transform:scaleX(-1)}
-    .pg-wayang.r{right:calc(50% - var(--aw) / 2 - var(--ww) * .86)}
+    .pg-sisi{top:calc(100% - var(--ah) - min(6svh,11vw));width:min(36%,19svh);height:auto;z-index:3;filter:drop-shadow(0 4px 6px rgba(60,20,20,.15))}
+    .pg-sisi.l{left:-12%;transform:scaleX(-1) rotate(-10deg)}.pg-sisi.r{right:-12%;transform:rotate(-10deg)}
+    .pg-kuncup{top:calc(100% - var(--ah) + min(9svh,17vw));width:min(20%,10.5svh);height:auto;z-index:2;filter:drop-shadow(0 3px 4px rgba(40,40,20,.15))}
+    .pg-kuncup.l{left:-3%;transform:rotate(-8deg)}.pg-kuncup.r{right:-3%;transform:scaleX(-1) rotate(-8deg)}
+    .pg-wayang{--ww:min(25vw,14svh,130px);bottom:min(9svh,17vw);width:var(--ww);height:auto;z-index:4;filter:drop-shadow(0 4px 6px rgba(60,40,20,.25))}
+    .pg-wayang.l{left:calc(50% - var(--aw) / 2 - var(--ww) * .72)}
+    .pg-wayang.r{right:calc(50% - var(--aw) / 2 - var(--ww) * .72)}
     .pg-arch{left:50%;bottom:0;width:var(--aw);height:var(--ah);transform:translate3d(-50%,8%,0) scale(.94);transform-origin:50% 100%;z-index:3;border-radius:999px 999px 0 0;padding:6px 6px 0;background:linear-gradient(180deg,#9a6a3c,#7a4e2a);box-shadow:0 0 0 1px #c8a77a,0 -6px 26px rgba(90,60,30,.25)}
     .pg-arch img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 30%;border-radius:999px 999px 0 0;filter:saturate(.9)}
-    .pg-gugus{bottom:-4svh;width:min(50%,27svh);height:auto;z-index:4;filter:drop-shadow(0 4px 8px rgba(60,20,20,.2))}
-    .pg-gugus.l{left:-17%;transform:scaleX(-1)}.pg-gugus.r{right:-17%}
+    .pg-dpn{height:auto;z-index:5;filter:drop-shadow(0 -2px 8px rgba(60,20,20,.18))}
+    .pg-dpn.a{left:-9%;bottom:-4svh;width:min(64%,34svh)}
+    .pg-dpn.b{left:34%;bottom:-5svh;width:min(50%,26svh)}
+    .pg-dpn.c{right:-14%;bottom:-5.5svh;width:min(48%,25svh)}
     .pg-kupu{width:30px;height:23px;z-index:4;top:calc(100% - var(--ah) + 2px)}
     .pg-kupu.l{left:calc(50% - var(--aw) / 2 - 26px)}.pg-kupu.r{right:calc(50% - var(--aw) / 2 - 26px);transform:scaleX(-1)}
     #panggung .pg-front{display:none!important}
@@ -4494,15 +4498,18 @@
           <img class="pg-daun r" src="aset/panggung/daun.webp" alt="" aria-hidden="true" decoding="async">
           <img class="pg-bunga2 l" src="aset/panggung/bunga.webp" alt="" aria-hidden="true" decoding="async">
           <img class="pg-bunga2 r" src="aset/panggung/bunga.webp" alt="" aria-hidden="true" decoding="async">
+          <img class="pg-kuncup l" src="aset/panggung/kuncup.webp" alt="" aria-hidden="true" decoding="async">
+          <img class="pg-kuncup r" src="aset/panggung/kuncup.webp" alt="" aria-hidden="true" decoding="async">
           <img class="pg-sisi l" src="aset/panggung/bunga.webp" alt="" aria-hidden="true" decoding="async">
           <img class="pg-sisi r" src="aset/panggung/bunga.webp" alt="" aria-hidden="true" decoding="async">
-          <img class="pg-wayang l" src="aset/panggung/wayang-putri.webp" alt="" aria-hidden="true" decoding="async">
-          <img class="pg-wayang r" src="aset/panggung/wayang-putri.webp" alt="" aria-hidden="true" decoding="async">
           <div class="pg-arch"><img src="aset/foto/prewed-05.webp" alt="Iqbal dan Sakha" decoding="async"></div>
           <div class="butterfly pg-kupu l" data-svg="butterfly"></div>
           <div class="butterfly pg-kupu r" data-svg="butterfly"></div>
-          <img class="pg-gugus l" src="aset/panggung/bunga.webp" alt="" aria-hidden="true" decoding="async">
-          <img class="pg-gugus r" src="aset/panggung/bunga.webp" alt="" aria-hidden="true" decoding="async">
+          <img class="pg-wayang l" src="aset/panggung/wayang-putra.webp" alt="" aria-hidden="true" decoding="async">
+          <img class="pg-wayang r" src="aset/panggung/wayang-putri.webp" alt="" aria-hidden="true" decoding="async">
+          <img class="pg-dpn a" src="aset/panggung/bunga-lili.webp" alt="" aria-hidden="true" decoding="async">
+          <img class="pg-dpn c" src="aset/panggung/bunga.webp" alt="" aria-hidden="true" decoding="async">
+          <img class="pg-dpn b" src="aset/panggung/bunga-dahlia.webp" alt="" aria-hidden="true" decoding="async">
           <div class="floral pg-front" data-floral="pita"></div>
           <div class="pg-cur l" aria-hidden="true"></div>
           <div class="pg-cur r" aria-hidden="true"></div>
