@@ -4396,6 +4396,30 @@
     @media (max-width:420px){.kartu.event{padding-top:64px;padding-bottom:58px}}
     /* tanpa kartu acara: Dress Code langsung menyambung bagian tanggal */
     #acara{padding-top:0!important;display:flow-root}
+
+    /* ===== isi tirai: gaya kertas krem (kop gunungan, nama, foto lengkung) ===== */
+    #panggung .pg-in{background:#efe7d9}
+    #panggung .pg-in::after{display:none!important}
+    .pg-kertas{inset:0;z-index:0;background:radial-gradient(120% 70% at 50% 35%,#f8f3ea,#efe6d6 60%,#e4d8c4);}
+    .pg-kertas::after{content:"";position:absolute;inset:0;opacity:.35;background-image:var(--grain-l);mix-blend-mode:multiply}
+    .pg-gunung{left:0;right:0;top:22svh;height:46svh;width:100%;z-index:0;opacity:.55;filter:blur(2px)}
+    .pg-kop{left:50%;top:max(50px,6.5svh);width:min(100%,480px,52svh);height:auto;translate:-50% 0;z-index:2}
+    #panggung .pg-txt{left:8px;right:8px;top:calc(max(50px,6.5svh) + min(100vw,480px,52svh) * .27)!important;bottom:auto;text-shadow:none!important;color:#7a6650;z-index:3}
+    #panggung .pg-txt::before{display:none!important}
+    #panggung .pg-small{font-family:var(--f-serif);font-style:normal;font-size:min(4.8vw,2.4svh,1.3rem);letter-spacing:.04em;color:#8a7158;margin:0}
+    #panggung .pg-txt h2{font-family:var(--f-deco);font-size:min(15vw,6.8svh,4.4rem);line-height:.98;margin:.02em 0 .12em;color:#7d1f26!important;-webkit-text-fill-color:#7d1f26!important;background:none!important;filter:none!important;animation:none!important;padding:.1em .3em}
+    #panggung .pg-txt h2 span{font-size:.62em;color:#7d1f26;display:inline-block;margin:-.1em 0}
+    #panggung .pg-date{font-family:var(--f-serif);font-weight:500;letter-spacing:.14em;font-size:clamp(.8rem,3.4vw,.95rem);color:#8a7158;text-transform:uppercase}
+    .pg-arch{left:50%;bottom:0;width:min(64%,34svh,300px);height:min(45svh,calc(min(64vw,34svh,300px) * 1.5));translate:0 0;transform:translate3d(-50%,8%,0) scale(.94);transform-origin:50% 100%;z-index:3;border-radius:999px 999px 0 0;padding:6px 6px 0;background:linear-gradient(180deg,#9a6a3c,#7a4e2a);box-shadow:0 0 0 1px #c8a77a,0 -6px 26px rgba(90,60,30,.25)}
+    .pg-arch img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 30%;border-radius:999px 999px 0 0;filter:saturate(.9)}
+    .pg-sisi{top:max(30px,4svh);width:min(30%,16svh);z-index:2}
+    .pg-sisi.l{left:-2%}.pg-sisi.r{right:-2%}
+    .pg-gugus{bottom:8svh;width:min(28%,15svh);z-index:4}
+    .pg-gugus.l{left:-4%}.pg-gugus.r{right:-4%}
+    .pg-kupu{width:34px;height:26px;z-index:4;top:calc(100% - min(45svh,calc(min(64vw,34svh,300px) * 1.5)) - 4px)}
+    .pg-kupu.l{left:14%}.pg-kupu.r{right:14%;transform:scaleX(-1)}
+    #panggung .pg-front{z-index:5;width:min(96%,46svh)!important;bottom:-4svh!important}
+    #panggung .pg-hint{color:#f6e3ae}
 </style>
 </head>
 
@@ -4447,16 +4471,21 @@
       <!-- ===== PANGGUNG: tirai terbuka saat digulir ===== -->
       <section class="panggung" id="panggung" aria-label="Iqbal dan Sakha">
         <div class="pg-in">
-          <div class="pg-sky" aria-hidden="true"></div>
-          <i class="pg-moon" aria-hidden="true"></i>
-          <div class="pg-bulbs" id="bulbs" aria-hidden="true"></div>
-          <img class="pg-house" src="aset/foto/rumah-adat.webp"
-            alt="Rumah adat Batak dengan ukiran gorga dan motif gunungan">
+          <div class="pg-kertas" aria-hidden="true"></div>
+          <svg class="pg-gunung" viewBox="0 0 400 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><path d="M0 300V236c26-6 44-22 66-30 20-8 30-26 50-40 18-12 26-36 44-60 10-14 20-30 32-46 8 14 18 26 26 40 14 22 26 44 46 58 18 12 32 24 50 34 22 12 44 20 86 26v82z" fill="#d6cebf"/><path d="M200 30c-10 40-30 80-20 120s-30 60-40 150h60c0-60 20-100 10-150s-5-80-10-120z" fill="#c2b8a8" opacity=".6"/></svg>
+          <svg class="pg-kop" viewBox="0 0 400 124" preserveAspectRatio="xMidYMin meet" aria-hidden="true"><g fill="none" stroke="#a8927a" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round"><g opacity=".75"><path d="M-20 2l16 16-16 16-16-16z"/><path d="M-20 10l8 8-8 8-8-8z"/><path d="M-40 2l10 10-10 10M0 2l-10 10 10 10"/><path d="M20 2l16 16-16 16-16-16z"/><path d="M20 10l8 8-8 8-8-8z"/><path d="M0 2l10 10-10 10M40 2l-10 10 10 10"/><path d="M60 2l16 16-16 16-16-16z"/><path d="M60 10l8 8-8 8-8-8z"/><path d="M40 2l10 10-10 10M80 2l-10 10 10 10"/><path d="M100 2l16 16-16 16-16-16z"/><path d="M100 10l8 8-8 8-8-8z"/><path d="M80 2l10 10-10 10M120 2l-10 10 10 10"/><path d="M140 2l16 16-16 16-16-16z"/><path d="M140 10l8 8-8 8-8-8z"/><path d="M120 2l10 10-10 10M160 2l-10 10 10 10"/><path d="M180 2l16 16-16 16-16-16z"/><path d="M180 10l8 8-8 8-8-8z"/><path d="M160 2l10 10-10 10M200 2l-10 10 10 10"/><path d="M220 2l16 16-16 16-16-16z"/><path d="M220 10l8 8-8 8-8-8z"/><path d="M200 2l10 10-10 10M240 2l-10 10 10 10"/><path d="M260 2l16 16-16 16-16-16z"/><path d="M260 10l8 8-8 8-8-8z"/><path d="M240 2l10 10-10 10M280 2l-10 10 10 10"/><path d="M300 2l16 16-16 16-16-16z"/><path d="M300 10l8 8-8 8-8-8z"/><path d="M280 2l10 10-10 10M320 2l-10 10 10 10"/><path d="M340 2l16 16-16 16-16-16z"/><path d="M340 10l8 8-8 8-8-8z"/><path d="M320 2l10 10-10 10M360 2l-10 10 10 10"/><path d="M380 2l16 16-16 16-16-16z"/><path d="M380 10l8 8-8 8-8-8z"/><path d="M360 2l10 10-10 10M400 2l-10 10 10 10"/><path d="M420 2l16 16-16 16-16-16z"/><path d="M420 10l8 8-8 8-8-8z"/><path d="M400 2l10 10-10 10M440 2l-10 10 10 10"/><path d="M460 2l16 16-16 16-16-16z"/><path d="M460 10l8 8-8 8-8-8z"/><path d="M440 2l10 10-10 10M480 2l-10 10 10 10"/><path d="M500 2l16 16-16 16-16-16z"/><path d="M500 10l8 8-8 8-8-8z"/><path d="M480 2l10 10-10 10M520 2l-10 10 10 10"/><path d="M540 2l16 16-16 16-16-16z"/><path d="M540 10l8 8-8 8-8-8z"/><path d="M520 2l10 10-10 10M560 2l-10 10 10 10"/><path d="M580 2l16 16-16 16-16-16z"/><path d="M580 10l8 8-8 8-8-8z"/><path d="M560 2l10 10-10 10M600 2l-10 10 10 10"/><path d="M620 2l16 16-16 16-16-16z"/><path d="M620 10l8 8-8 8-8-8z"/><path d="M600 2l10 10-10 10M640 2l-10 10 10 10"/><path d="M660 2l16 16-16 16-16-16z"/><path d="M660 10l8 8-8 8-8-8z"/><path d="M640 2l10 10-10 10M680 2l-10 10 10 10"/><path d="M700 2l16 16-16 16-16-16z"/><path d="M700 10l8 8-8 8-8-8z"/><path d="M680 2l10 10-10 10M720 2l-10 10 10 10"/><path d="M740 2l16 16-16 16-16-16z"/><path d="M740 10l8 8-8 8-8-8z"/><path d="M720 2l10 10-10 10M760 2l-10 10 10 10"/><path d="M780 2l16 16-16 16-16-16z"/><path d="M780 10l8 8-8 8-8-8z"/><path d="M760 2l10 10-10 10M800 2l-10 10 10 10"/><path d="M820 2l16 16-16 16-16-16z"/><path d="M820 10l8 8-8 8-8-8z"/><path d="M800 2l10 10-10 10M840 2l-10 10 10 10"/></g><path d="M0 40H400M0 44H400" stroke-width=".8"/><path d="M200 4C214 28 240 50 242 80c2 22-18 38-42 38s-44-16-42-38c2-30 28-52 42-76z" fill="#efe6d6"/><path d="M200 4C214 28 240 50 242 80c2 22-18 38-42 38s-44-16-42-38c2-30 28-52 42-76z"/><path d="M200 14c11 20 32 40 34 66 1 18-15 30-34 30s-35-12-34-30c2-26 23-46 34-66z" stroke-width=".7"/><path d="M200 108V26"/><path d="M200 36c6-6 8-6 12 2 2 5-2 9-6 7s-3-7 0-7"/><path d="M200 36c-6-6 -8-6 -12 2 -2 5 2 9 6 7s3-7 0-7"/><path d="M200 50c6-6 16-6 20 2 2 5-2 9-6 7s-3-7 0-7"/><path d="M200 50c-6-6 -16-6 -20 2 -2 5 2 9 6 7s3-7 0-7"/><path d="M200 64c6-6 22-6 26 2 2 5-2 9-6 7s-3-7 0-7"/><path d="M200 64c-6-6 -22-6 -26 2 -2 5 2 9 6 7s3-7 0-7"/><path d="M200 78c6-6 24-6 28 2 2 5-2 9-6 7s-3-7 0-7"/><path d="M200 78c-6-6 -24-6 -28 2 -2 5 2 9 6 7s3-7 0-7"/><path d="M184 96l16-10 16 10M188 96v14h24V96M196 110v-8h8v8" /></g></svg>
           <div class="pg-txt">
-            <p class="pg-small">Dua adat, satu rumah</p>
-            <h2>Iqbal <span>&amp;</span><br>Sakha</h2>
-            <p class="pg-date">Minggu · 3 Januari 2027</p>
+            <p class="pg-small">The Wedding of</p>
+            <h2>Iqbal<br><span>&amp;</span><br>Sakha</h2>
+            <p class="pg-date">Minggu · 03 Januari 2027</p>
           </div>
+          <div class="floral pg-sisi l sway" data-floral="juntai"></div>
+          <div class="floral pg-sisi r flip sway b" data-floral="juntai"></div>
+          <div class="pg-arch"><img src="aset/foto/prewed-05.webp" alt="Iqbal dan Sakha" decoding="async"></div>
+          <div class="butterfly pg-kupu l" data-svg="butterfly"></div>
+          <div class="butterfly pg-kupu r" data-svg="butterfly"></div>
+          <div class="floral pg-gugus l" data-floral="gugus"></div>
+          <div class="floral pg-gugus r flip" data-floral="gugus"></div>
           <div class="floral pg-front" data-floral="pita"></div>
           <div class="pg-cur l" aria-hidden="true"></div>
           <div class="pg-cur r" aria-hidden="true"></div>
@@ -5101,18 +5130,8 @@
       function fly() { if (reduce) return; var x = OX + left() + 20 + Math.random() * (Math.min(480, innerWidth) - 80), y = 60 + Math.random() * (innerHeight - 160); pal.style.transform = "translate(" + x + "px," + y + "px) rotate(" + (-20 + Math.random() * 40) + "deg)"; }
       setInterval(function () { if (pal.classList.contains("on") && !document.hidden) fly(); }, 3200);
 
-      /* ---------- Lampu gantung panggung ---------- */
-      (function () {
-        var gr = ["", "", ""], kb = "", n = 0;
-        [[0, 60, 200, 150, 400, 50], [0, 110, 210, 40, 400, 120]].forEach(function (c) {
-          kb += '<path d="M' + c[0] + ' ' + c[1] + 'Q' + c[2] + ' ' + c[3] + ' ' + c[4] + ' ' + c[5] + '" fill="none" stroke="rgba(255,226,170,.35)" stroke-width=".8"/>';
-          for (var t = .03; t < 1; t += .062) { var u = 1 - t, x = u * u * c[0] + 2 * u * t * c[2] + t * t * c[4], y = u * u * c[1] + 2 * u * t * c[3] + t * t * c[5] + 3; gr[n++ % 3] += '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="5" fill="#ffcf70" opacity=".22"/><circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="2.3" fill="#ffe2a0"/>'; }
-        });
-        $("#bulbs").innerHTML = [kb].concat(gr).map(function (g, k) { return '<svg class="' + (k ? 'lampu' : '') + '" style="animation-delay:' + (-k * .8) + 's" viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true">' + g + '</svg>'; }).join("");
-      })();
-
       /* ---------- Gerak mengikuti gulir ---------- */
-      var E = {};[["h", ".pg-house"], ["t", ".pg-txt"], ["f", ".pg-front"], ["m", ".pg-moon"], ["l", ".pg-cur.l"], ["r", ".pg-cur.r"], ["a", ".pg-c.l"], ["b", ".pg-c.r"], ["i", ".pg-hint"]].forEach(function (x) { E[x[0]] = $(x[1]).style; });
+      var E = {};[["h", ".pg-arch"], ["t", ".pg-txt"], ["f", ".pg-front"], ["m", ".pg-gunung"], ["l", ".pg-cur.l"], ["r", ".pg-cur.r"], ["a", ".pg-c.l"], ["b", ".pg-c.r"], ["i", ".pg-hint"]].forEach(function (x) { E[x[0]] = $(x[1]).style; });
       var pg = $("#panggung"), plx = $$("[data-plx]"), tick = false;
       function cl(v) { return Math.max(0, Math.min(1, v)); }
       function ease(v) { return v * v * (3 - 2 * v); }
@@ -5120,7 +5139,7 @@
       function glide(t) {
         var dt = Math.min(50, t - (lt || t)) || 16; lt = t; now += (goal - now) * (1 - Math.exp(-dt / 85)); if (Math.abs(goal - now) < .0006) now = goal;
         var c = ease(cl(now / .55)), k = ease(cl((now - .35) / .65));
-        E.h.transform = "translate3d(-50%," + ((1 - c) * 16).toFixed(2) + "%,0) scale(" + (.9 + c * .04 + k * .06).toFixed(4) + ")";
+        E.h.transform = "translate3d(-50%," + ((1 - c) * 8).toFixed(2) + "%,0) scale(" + (.94 + c * .03 + k * .03).toFixed(4) + ")";
         E.t.opacity = cl((c - .45) * 2.4).toFixed(3); E.t.transform = "translate3d(0," + ((1 - c) * 30).toFixed(1) + "px,0) scale(" + (.94 + k * .06).toFixed(4) + ")";
         E.f.transform = "scale(" + (.94 + k * .1).toFixed(4) + ")"; E.m.transform = "translate3d(0," + (k * 14).toFixed(1) + "px,0)";
         E.l.transform = "scaleX(" + (1 - c * .91).toFixed(4) + ") skewX(" + (c * 1.5).toFixed(2) + "deg)"; E.r.transform = "scaleX(" + (1 - c * .91).toFixed(4) + ") skewX(" + (-c * 1.5).toFixed(2) + "deg)";
