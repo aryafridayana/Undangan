@@ -5329,17 +5329,80 @@
       width: calc(var(--w) * .36);
       z-index: 6
     }
-      #panggung .pg-date{text-transform:none!important;letter-spacing:.03em!important;font-size:min(4.6vw,2.3svh,1.18rem)!important}
-    #f-nama.terisi{background:rgba(243,237,226,.08)!important;border-color:rgba(240,214,148,.45)!important;color:#f6e3ae!important;font-weight:600;cursor:default}
-    .hal-ucapan{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:16px}
-    .hal-ucapan[hidden]{display:none}
-    .hu-k{width:40px;height:40px;border-radius:50%;border:1px solid #f0d694;background:transparent;color:#f6e3ae;font:400 1.6rem/1 var(--f-serif);padding:0 0 4px;cursor:pointer;transition:background .2s,opacity .2s}
-    .hu-k:hover:not(:disabled){background:rgba(240,214,148,.12)}
-    .hu-k:disabled{opacity:.3;cursor:default}
-    .hu-no{min-width:56px;text-align:center;letter-spacing:.12em;color:rgba(243,237,226,.85);font-size:.95rem}
-    .wishes .wish{animation:huMasuk .45s ease both}
-    @keyframes huMasuk{from{opacity:0;transform:translateY(8px)}}
-    @media (prefers-reduced-motion:reduce){.wishes .wish{animation:none}}
+
+    #panggung .pg-date {
+      text-transform: none !important;
+      letter-spacing: .03em !important;
+      font-size: min(4.6vw, 2.3svh, 1.18rem) !important
+    }
+
+    #f-nama.terisi {
+      background: rgba(243, 237, 226, .08) !important;
+      border-color: rgba(240, 214, 148, .45) !important;
+      color: #f6e3ae !important;
+      font-weight: 600;
+      cursor: default
+    }
+
+    .hal-ucapan {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 16px
+    }
+
+    .hal-ucapan[hidden] {
+      display: none
+    }
+
+    .hu-k {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid #f0d694;
+      background: transparent;
+      color: #f6e3ae;
+      font: 400 1.6rem/1 var(--f-serif);
+      padding: 0 0 4px;
+      cursor: pointer;
+      transition: background .2s, opacity .2s
+    }
+
+    .hu-k:hover:not(:disabled) {
+      background: rgba(240, 214, 148, .12)
+    }
+
+    .hu-k:disabled {
+      opacity: .3;
+      cursor: default
+    }
+
+    .hu-no {
+      min-width: 56px;
+      text-align: center;
+      letter-spacing: .12em;
+      color: rgba(243, 237, 226, .85);
+      font-size: .95rem
+    }
+
+    .wishes .wish {
+      animation: huMasuk .45s ease both
+    }
+
+    @keyframes huMasuk {
+      from {
+        opacity: 0;
+        transform: translateY(8px)
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      .wishes .wish {
+        animation: none
+      }
+    }
+      .mp-foto[src*="wanita"]{width:81%!important}
 </style>
 </head>
 
@@ -5361,9 +5424,9 @@
             <div class="doily" id="doily">
               <div data-svg="doily"></div>
               <div class="q">
-                <b>Dua Hati, Satu Ikatan</b>
-                <span>Dua keluarga, dua adat, dan satu doa yang sama: agar cinta ini tumbuh dalam kasih, saling menjaga,
-                  dan menjadi berkah bagi semua yang ada di sekitarnya.</span>
+                <b>One Love, Forever</b>
+                <span>With grateful hearts and the blessings of our families, we celebrate the beginning of a lifetime
+                  together, built on love, trust, and unwavering devotion.</span>
                 <small>SAKHA &amp; IQBAL</small>
               </div>
               <div class="tassel" data-svg="tassel"></div>
@@ -5609,8 +5672,8 @@
       <!-- ===== HADIAH ===== -->
       <section class="velvet" id="hadiah" data-sparks="3" style="padding-top:30px">
         <h2 class="title rv">Wedding Gift</h2>
-        <p class="lead rv">Doa restu dan kehadiran Anda merupakan karunia yang sangat berarti bagi kami. Namun, jika
-          memberi adalah ungkapan tanda kasih, Anda dapat memberi melalui kado di bawah ini.</p>
+        <p class="lead rv">Your prayers and presence are the best gift. However, if you want to give a gift weprovide a
+          digital envelope to make it easier for you. Thank You</p>
         <button class="kado" id="kado" type="button" aria-expanded="false" aria-controls="isiKado"
           aria-label="Buka kado">
           <span class="kd-sinar" aria-hidden="true"></span>
@@ -6194,7 +6257,7 @@
         if (!reduce) setTimeout(function () { var b = kado.getBoundingClientRect().top, e = isi.children[1], lebih = b + e.offsetTop + e.offsetHeight - kado.offsetTop - innerHeight + 20; if (lebih > 0 && b > 0) scrollBy({ top: Math.min(lebih, Math.max(0, b - 8)), behavior: "smooth" }); }, 1200);
       }
       function kadoMain() {
-        $("#kadoCta").textContent = "Terima kasih atas tanda kasihnya";
+        $("#kadoCta").hidden = true;
         var n = 0; for (var i = 0; i < KN; i++) if (kf[i]) n++;
         if (reduce || !kf[0] || n < KN * .6) { kadoBuka(); return; }
         var t0 = 0, akhir = -1, lama = 1350, meledak = false;
