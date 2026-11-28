@@ -4405,23 +4405,27 @@
     .pg-kertas::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(246,242,232,.25),rgba(246,242,232,0) 40%)}
     .pg-gunung{left:50%;top:calc(var(--kt) + var(--kw) * .2);width:min(120%,62svh);height:auto;translate:-50% 0;z-index:0;opacity:.6;display:none;-webkit-mask-image:linear-gradient(#000 55%,transparent 98%);mask-image:linear-gradient(#000 55%,transparent 98%)}
     .pg-kop{left:50%;top:var(--kt);width:var(--kw);height:auto;translate:-50% 0;z-index:1}
-    .pg-pohon{top:calc(var(--kt) - 18px);width:min(46%,25svh);height:auto;z-index:2;filter:drop-shadow(0 4px 6px rgba(80,30,30,.12))}
-    .pg-pohon.l{left:-13%}.pg-pohon.r{right:-13%;transform:scaleX(-1)}
+    .pg-pohon{top:calc(var(--kt) - 26px);width:min(52%,28svh);height:auto;z-index:2;filter:drop-shadow(0 4px 6px rgba(80,30,30,.12))}
+    .pg-pohon.l{left:-17%}.pg-pohon.r{right:-17%;transform:scaleX(-1)}
+    .pg-daun{top:calc(var(--kt) + min(19svh,37vw));width:min(40%,21svh);height:auto;z-index:2;filter:drop-shadow(0 4px 6px rgba(80,30,30,.12))}
+    .pg-daun.l{left:-15%}.pg-daun.r{right:-15%;transform:scaleX(-1)}
+    .pg-bunga2{top:calc(var(--kt) + min(9svh,17vw));width:min(26%,14svh);height:auto;z-index:2;filter:drop-shadow(0 3px 5px rgba(60,20,20,.15))}
+    .pg-bunga2.l{left:-9%;transform:rotate(18deg)}.pg-bunga2.r{right:-9%;transform:scaleX(-1) rotate(18deg)}
     #panggung .pg-txt{left:14%;right:14%;top:calc(var(--kt) + var(--kw) * .3 + 2px)!important;bottom:auto;text-shadow:none!important;color:#7a6650;z-index:3}
     #panggung .pg-txt::before{display:none!important}
     #panggung .pg-small{font-family:var(--f-serif);font-style:normal;font-size:min(4.8vw,2.4svh,1.3rem);letter-spacing:.04em;color:#8a7158;margin:0}
     #panggung .pg-txt h2{font-family:var(--f-deco);font-size:min(15vw,6.8svh,4.4rem);line-height:.98;margin:.02em -.4em .12em;color:#7d1f26!important;-webkit-text-fill-color:#7d1f26!important;background:none!important;filter:none!important;animation:none!important;padding:.1em .3em}
     #panggung .pg-txt h2 span{font-size:.62em;color:#7d1f26;display:inline-block;margin:-.1em 0}
     #panggung .pg-date{font-family:var(--f-serif);font-weight:500;letter-spacing:.14em;font-size:min(3.4vw,1.7svh,.95rem);color:#8a7158;text-transform:uppercase;white-space:nowrap}
-    .pg-sisi{top:calc(100% - var(--ah) - min(15svh,29vw));width:min(38%,20svh);height:auto;z-index:2;filter:drop-shadow(0 4px 6px rgba(60,20,20,.15))}
-    .pg-sisi.l{left:-13%;transform:scaleX(-1) rotate(-6deg)}.pg-sisi.r{right:-13%;transform:rotate(-6deg)}
+    .pg-sisi{top:calc(100% - var(--ah) - min(15svh,29vw));width:min(46%,24svh);height:auto;z-index:3;filter:drop-shadow(0 4px 6px rgba(60,20,20,.15))}
+    .pg-sisi.l{left:-17%;transform:scaleX(-1) rotate(-6deg)}.pg-sisi.r{right:-17%;transform:rotate(-6deg)}
     .pg-wayang{--ww:min(25vw,13.5svh,124px);bottom:calc(var(--ah) * .12);width:var(--ww);height:auto;z-index:2;filter:drop-shadow(0 4px 6px rgba(60,40,20,.2))}
     .pg-wayang.l{left:calc(50% - var(--aw) / 2 - var(--ww) * .86);transform:scaleX(-1)}
     .pg-wayang.r{right:calc(50% - var(--aw) / 2 - var(--ww) * .86)}
     .pg-arch{left:50%;bottom:0;width:var(--aw);height:var(--ah);transform:translate3d(-50%,8%,0) scale(.94);transform-origin:50% 100%;z-index:3;border-radius:999px 999px 0 0;padding:6px 6px 0;background:linear-gradient(180deg,#9a6a3c,#7a4e2a);box-shadow:0 0 0 1px #c8a77a,0 -6px 26px rgba(90,60,30,.25)}
     .pg-arch img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 30%;border-radius:999px 999px 0 0;filter:saturate(.9)}
-    .pg-gugus{bottom:-3svh;width:min(40%,21svh);height:auto;z-index:4;filter:drop-shadow(0 4px 8px rgba(60,20,20,.2))}
-    .pg-gugus.l{left:-12%;transform:scaleX(-1)}.pg-gugus.r{right:-12%}
+    .pg-gugus{bottom:-4svh;width:min(50%,27svh);height:auto;z-index:4;filter:drop-shadow(0 4px 8px rgba(60,20,20,.2))}
+    .pg-gugus.l{left:-17%;transform:scaleX(-1)}.pg-gugus.r{right:-17%}
     .pg-kupu{width:30px;height:23px;z-index:4;top:calc(100% - var(--ah) + 2px)}
     .pg-kupu.l{left:calc(50% - var(--aw) / 2 - 26px)}.pg-kupu.r{right:calc(50% - var(--aw) / 2 - 26px);transform:scaleX(-1)}
     #panggung .pg-front{display:none!important}
@@ -4486,6 +4490,10 @@
           </div>
           <img class="pg-pohon l" src="aset/panggung/pohon.webp" alt="" aria-hidden="true" decoding="async">
           <img class="pg-pohon r" src="aset/panggung/pohon.webp" alt="" aria-hidden="true" decoding="async">
+          <img class="pg-daun l" src="aset/panggung/daun.webp" alt="" aria-hidden="true" decoding="async">
+          <img class="pg-daun r" src="aset/panggung/daun.webp" alt="" aria-hidden="true" decoding="async">
+          <img class="pg-bunga2 l" src="aset/panggung/bunga.webp" alt="" aria-hidden="true" decoding="async">
+          <img class="pg-bunga2 r" src="aset/panggung/bunga.webp" alt="" aria-hidden="true" decoding="async">
           <img class="pg-sisi l" src="aset/panggung/bunga.webp" alt="" aria-hidden="true" decoding="async">
           <img class="pg-sisi r" src="aset/panggung/bunga.webp" alt="" aria-hidden="true" decoding="async">
           <img class="pg-wayang l" src="aset/panggung/wayang-putri.webp" alt="" aria-hidden="true" decoding="async">
