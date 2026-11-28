@@ -4435,6 +4435,33 @@
     .pg-kupu{width:30px;height:23px;z-index:4;top:calc(100% - var(--ah) + 2px)}
     .pg-kupu.l{left:calc(50% - var(--aw) / 2 - 26px)}.pg-kupu.r{right:calc(50% - var(--aw) / 2 - 26px);transform:scaleX(-1)}
     #panggung .pg-front{display:none!important}
+    .pg-blk{z-index:1;height:auto;filter:drop-shadow(0 3px 5px rgba(60,20,20,.12))}
+    .pg-blk.l{left:-16%;top:calc(100% - var(--ah) * .62);width:min(44%,23svh);transform:scaleX(-1) rotate(-14deg)}
+    .pg-blk.r{right:-20%;top:calc(100% - var(--ah) * .5);width:min(46%,24svh);transform:rotate(12deg)}
+    .pg-blk2{z-index:1;height:auto}
+    .pg-blk2.l{left:2%;top:calc(100% - var(--ah) * .38);width:min(16%,8.5svh);transform:rotate(-16deg)}
+    /* --- hidup: pohon, daun, dan bunga bergoyang pelan seperti tertiup angin --- */
+    @keyframes pgAngin{0%,100%{rotate:-1.4deg}50%{rotate:1.6deg}}
+    @keyframes pgAngin2{0%,100%{rotate:1.2deg;translate:0 0}50%{rotate:-1.8deg;translate:0 -2px}}
+    @keyframes pgAngin3{0%,100%{rotate:-.8deg;translate:0 0}40%{rotate:1deg;translate:1px -1px}70%{rotate:-.3deg;translate:-1px 0}}
+    .pg-pohon{transform-origin:50% 100%;animation:pgAngin 7.5s ease-in-out infinite}
+    .pg-pohon.r{transform-origin:50% 100%;animation-duration:8.3s;animation-delay:-2.6s}
+    .pg-daun{transform-origin:50% 60%;animation:pgAngin2 6.4s ease-in-out infinite}
+    .pg-daun.r{transform-origin:50% 60%;animation-delay:-3.1s;animation-duration:7.1s}
+    .pg-bunga2,.pg-sisi,.pg-kuncup,.pg-blk,.pg-blk2{animation:pgAngin3 5.6s ease-in-out infinite}
+    .pg-bunga2{transform-origin:50% 50%;animation-delay:-1s}
+    .pg-sisi{transform-origin:50% 80%;animation-duration:6.2s}
+    .pg-sisi.r{transform-origin:50% 80%;animation-delay:-2.2s}
+    .pg-kuncup{transform-origin:50% 100%;animation:pgAngin2 4.8s ease-in-out infinite}
+    .pg-kuncup.r{animation-delay:-1.7s}
+    .pg-blk{transform-origin:50% 90%;animation-duration:6.8s;animation-delay:-3.4s}
+    .pg-blk2{transform-origin:50% 100%;animation:pgAngin2 5.2s ease-in-out infinite;animation-delay:-.8s}
+    .pg-dpn{transform-origin:50% 100%;animation:pgAngin3 6s ease-in-out infinite}
+    .pg-dpn.a{animation-delay:-1.2s}.pg-dpn.b{animation-delay:-2.9s;animation-duration:5.4s}.pg-dpn.d{animation-delay:-.4s;animation-duration:6.6s}
+    .pg-dpn.c{animation-delay:-3.8s}.pg-dpn.e{animation-delay:-2s;animation-duration:7s}
+    .pg-wayang{animation:pgAngin3 9s ease-in-out infinite;transform-origin:50% 100%}
+    .pg-wayang.r{animation-delay:-4.5s}
+    @media (prefers-reduced-motion:reduce){.pg-pohon,.pg-daun,.pg-bunga2,.pg-sisi,.pg-kuncup,.pg-blk,.pg-blk2,.pg-dpn,.pg-wayang{animation:none!important}}
     #panggung .pg-hint{color:#f6e3ae}
 </style>
 </head>
@@ -4507,6 +4534,9 @@
           <div class="pg-arch"><img src="aset/foto/prewed-05.webp" alt="Iqbal dan Sakha" decoding="async"></div>
           <div class="butterfly pg-kupu l" data-svg="butterfly"></div>
           <div class="butterfly pg-kupu r" data-svg="butterfly"></div>
+          <img class="pg-blk l" src="aset/panggung/bunga-dahlia.webp" alt="" aria-hidden="true" decoding="async">
+          <img class="pg-blk r" src="aset/panggung/bunga-lili.webp" alt="" aria-hidden="true" decoding="async">
+          <img class="pg-blk2 l" src="aset/panggung/kuncup.webp" alt="" aria-hidden="true" decoding="async">
           <img class="pg-wayang l" src="aset/panggung/wayang-putra.webp" alt="" aria-hidden="true" decoding="async">
           <img class="pg-wayang r" src="aset/panggung/wayang-putri.webp" alt="" aria-hidden="true" decoding="async">
           <img class="pg-dpn e" src="aset/panggung/bunga.webp" alt="" aria-hidden="true" decoding="async">
