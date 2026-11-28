@@ -4390,7 +4390,11 @@
         display: none
       }
     }
-  </style>
+  
+    /* --- kartu acara tanpa ikon: judul turun ke bagian lengkung yang lebar --- */
+    .kartu.event{padding-top:78px;padding-bottom:70px}
+    @media (max-width:420px){.kartu.event{padding-top:64px;padding-bottom:58px}}
+</style>
 </head>
 
 <body>
@@ -4542,7 +4546,6 @@
       <section class="suede" id="acara" data-sparks="4">
         <article class="event kartu rv tilt" data-n="1">
           <span class="floral ka" data-floral="sudut"></span><span class="floral kb" data-floral="gugus"></span>
-          <span class="ev-ic ring"><img src="aset/foto/galeri-2.webp" alt="" loading="lazy"></span>
           <h2>Akad Nikah</h2>
           <p class="when">Minggu, 3 Januari 2027</p>
           <p class="time">07.00 WIB – selesai</p>
@@ -4551,7 +4554,6 @@
         </article>
         <article class="event kartu rv tilt" data-n="2">
           <span class="floral ka" data-floral="sudut"></span><span class="floral kb" data-floral="gugus"></span>
-          <span class="ev-ic rmh"><img src="aset/foto/rumah-adat.webp" alt="" loading="lazy"></span>
           <h2>Resepsi</h2>
           <p class="when">Minggu, 3 Januari 2027</p>
           <p class="time">11.00 – 13.00 WIB</p>
