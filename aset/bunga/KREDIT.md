@@ -1,3 +1,9 @@
+# Kredit bunga
+
+**Rangkaian bunga (sudut.webp, gugus.webp, pita.webp, juntai.webp)** — sejak 28 November 2026 disusun dari gambar bunga milik pemilik undangan (lihat aset/panggung dan aset/mempelai).
+
+**Kuntum kecil yang berjatuhan (k-*.webp)** — tetap dari foto Wikimedia Commons berikut:
+
 # Kredit foto bunga
 
 `pita.webp`, `sudut.webp`, `gugus.webp`, `juntai.webp`, dan kuntum `k-*.webp` disusun dari foto Wikimedia Commons di bawah ini. Hasil susunan dibagikan dengan lisensi [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).

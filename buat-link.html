@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Pembuat Link Undangan</title>
+<style>
+  :root{--bg:#f6f1e7;--kartu:#fffaf1;--teks:#3b2a24;--redup:#7a6650;--aksen:#7d1f26;--garis:#e2d6c2}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--teks);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  main{max-width:760px;margin:0 auto;padding:24px 16px 60px}
+  h1{font-size:1.5rem;margin:0 0 4px;color:var(--aksen)}
+  p.sub{margin:0 0 20px;color:var(--redup)}
+  .kartu{background:var(--kartu);border:1px solid var(--garis);border-radius:14px;padding:16px;margin-bottom:16px}
+  label{display:block;font-weight:600;margin-bottom:6px}
+  small.ket{display:block;color:var(--redup);font-weight:400;margin-top:2px}
+  input,textarea{width:100%;font:inherit;padding:10px 12px;border:1px solid var(--garis);border-radius:10px;background:#fff;color:inherit}
+  textarea{min-height:150px;resize:vertical}
+  .baris{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+  button{font:inherit;padding:9px 14px;border-radius:10px;border:1px solid var(--aksen);background:var(--aksen);color:#fff;cursor:pointer}
+  button.garis{background:transparent;color:var(--aksen)}
+  button:active{transform:translateY(1px)}
+  .ringkas{color:var(--redup);margin:4px 0 10px}
+  .tamu{background:var(--kartu);border:1px solid var(--garis);border-radius:12px;padding:12px 14px;margin-bottom:10px}
+  .tamu b{display:block;font-size:1.05rem}
+  .tamu code{display:block;word-break:break-all;font-size:.85rem;color:var(--redup);margin:4px 0 10px}
+  .tamu .baris{margin-top:0}
+  .tamu button{padding:7px 11px;font-size:.92rem}
+  .tamu a{display:inline-block;padding:7px 11px;font-size:.92rem;border-radius:10px;background:#1f8f4e;color:#fff;text-decoration:none}
+  .ok{background:#2f6b3a!important;border-color:#2f6b3a!important;color:#fff!important}
+</style>
+</head>
+<body>
+<main>
+  <h1>Pembuat Link Undangan</h1>
+  <p class="sub">Tulis nama tamu, satu nama per baris. Setiap tamu langsung mendapat link undangan dengan namanya sendiri, beserta pesan WhatsApp yang siap dikirim.</p>
+
+  <div class="kartu">
+    <label for="alamat">Alamat undangan</label>
+    <input id="alamat" value="https://dummyundangan.vercel.app/beludru.html">
+    <small class="ket">Ganti kalau undangan pindah ke alamat lain.</small>
+  </div>
+
+  <div class="kartu">
+    <label for="nama">Daftar nama tamu</label>
+    <textarea id="nama" placeholder="Bapak Budi Santoso&#10;Ibu Sari &amp; Keluarga&#10;Rina dan Andi"></textarea>
+    <small class="ket">Satu nama per baris. Boleh memakai "&amp;", titik, atau gelar.</small>
+  </div>
+
+  <div class="kartu">
+    <label for="pesan">Pesan WhatsApp</label>
+    <textarea id="pesan" style="min-height:190px"></textarea>
+    <small class="ket">{nama} dan {link} otomatis diganti dengan nama dan link setiap tamu.</small>
+  </div>
+
+  <div class="baris">
+    <button id="buat" type="button">Buat link</button>
+    <button id="salinSemua" type="button" class="garis">Salin semua link</button>
+    <button id="unduh" type="button" class="garis">Unduh daftar (CSV)</button>
+  </div>
+
+  <p class="ringkas" id="ringkas"></p>
+  <div id="hasil"></div>
+</main>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var BAWAAN = "Assalamu'alaikum Warahmatullahi Wabarakatuh\n\nKepada Yth.\n{nama}\n\nTanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di acara pernikahan kami:\n\nSakha & Iqbal\nMinggu, 3 Januari 2027\nExecutive Club Persada, Halim Perdanakusuma\n\nInfo lengkap acara ada di link berikut:\n{link}\n\nMerupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.\n\nWassalamu'alaikum Warahmatullahi Wabarakatuh";
+  function simpan(k, v) { try { localStorage.setItem("buatlink-" + k, v); } catch (e) {} }
+  function ambil(k) { try { return localStorage.getItem("buatlink-" + k); } catch (e) { return null; } }
+  $("pesan").value = ambil("pesan") || BAWAAN;
+  $("nama").value = ambil("nama") || "";
+  if (ambil("alamat")) $("alamat").value = ambil("alamat");
+  ["pesan", "nama", "alamat"].forEach(function (k) { $(k).addEventListener("input", function () { simpan(k, $(k).value); }); });
+
+  var daftar = [];
+  function linkUntuk(nama) {
+    var dasar = $("alamat").value.trim().split("#")[0];
+    /* spasi jadi "-", karakter lain dikodekan agar aman di link */
+    return dasar + "#" + encodeURIComponent(nama.replace(/\s+/g, "-"));
+  }
+  function salin(teks, tombol) {
+    function selesai() { var t = tombol.textContent; tombol.textContent = "Tersalin"; tombol.classList.add("ok"); setTimeout(function () { tombol.textContent = t; tombol.classList.remove("ok"); }, 1400); }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(teks).then(selesai, cadangan); else cadangan();
+    function cadangan() { var a = document.createElement("textarea"); a.value = teks; document.body.appendChild(a); a.select(); try { document.execCommand("copy"); selesai(); } catch (e) {} a.remove(); }
+  }
+  function buat() {
+    var nama = $("nama").value.split("\n").map(function (s) { return s.trim(); }).filter(Boolean);
+    var templat = $("pesan").value;
+    daftar = nama.map(function (n) { var l = linkUntuk(n); return { nama: n, link: l, pesan: templat.split("{nama}").join(n).split("{link}").join(l) }; });
+    var hasil = $("hasil"); hasil.innerHTML = "";
+    $("ringkas").textContent = daftar.length ? daftar.length + " tamu" : "Belum ada nama. Tulis nama tamu dulu, satu per baris.";
+    daftar.forEach(function (d) {
+      var el = document.createElement("div"); el.className = "tamu";
+      var b = document.createElement("b"); b.textContent = d.nama;
+      var c = document.createElement("code"); c.textContent = d.link;
+      var br = document.createElement("div"); br.className = "baris";
+      var s1 = document.createElement("button"); s1.type = "button"; s1.className = "garis"; s1.textContent = "Salin link"; s1.onclick = function () { salin(d.link, s1); };
+      var s2 = document.createElement("button"); s2.type = "button"; s2.className = "garis"; s2.textContent = "Salin pesan"; s2.onclick = function () { salin(d.pesan, s2); };
+      var wa = document.createElement("a"); wa.href = "https://wa.me/?text=" + encodeURIComponent(d.pesan); wa.target = "_blank"; wa.rel = "noopener"; wa.textContent = "Kirim lewat WhatsApp";
+      var buka = document.createElement("a"); buka.href = d.link; buka.target = "_blank"; buka.rel = "noopener"; buka.textContent = "Coba buka"; buka.style.background = "#7a6650";
+      br.append(s1, s2, wa, buka); el.append(b, c, br); hasil.appendChild(el);
+    });
+  }
+  $("buat").onclick = buat;
+  $("salinSemua").onclick = function () { if (!daftar.length) buat(); salin(daftar.map(function (d) { return d.nama + "\t" + d.link; }).join("\n"), $("salinSemua")); };
+  $("unduh").onclick = function () {
+    if (!daftar.length) buat(); if (!daftar.length) return;
+    var q = function (v) { return '"' + String(v).replace(/"/g, '""') + '"'; };
+    var csv = "﻿Nama,Link,Pesan\n" + daftar.map(function (d) { return [d.nama, d.link, d.pesan].map(q).join(","); }).join("\n");
+    var a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" })); a.download = "link-undangan.csv"; a.click();
+  };
+  if ($("nama").value.trim()) buat();
+})();
+</script>
+</body>
+</html>
